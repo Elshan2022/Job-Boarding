@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "616928640189",
+    "project_id": "job-board-application-37f42",
+    "storage_bucket": "job-board-application-37f42.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:616928640189:android:7e433b8ab7a530abde4bd4",
+        "android_client_info": {
+          "package_name": "com.elshanhsynv.flutter_job_boarding"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZSMe1q_Q1uTb4MgL4752iLKzpfKccsq0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
