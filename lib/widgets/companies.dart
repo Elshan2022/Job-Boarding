@@ -48,7 +48,7 @@ class Companies extends StatelessWidget {
           height: 58.33.h,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(38.89.w),
-            color: AppColors.darkGrey,
+            color: AppColors.lightGrey,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -84,7 +84,7 @@ class Companies extends StatelessWidget {
           height: 70.01.h,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(38.89.w),
-            color: AppColors.darkGrey,
+            color: AppColors.lightGrey,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -156,7 +156,7 @@ class Companies extends StatelessWidget {
           height: 58.83.h,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(38.89.w),
-            color: AppColors.darkGrey,
+            color: AppColors.lightGrey,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -192,7 +192,7 @@ class Companies extends StatelessWidget {
           height: 58.33.h,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(38.89.w),
-            color: AppColors.darkGrey,
+            color: AppColors.lightGrey,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -228,7 +228,7 @@ class Companies extends StatelessWidget {
           height: 48.99.h,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(32.66.w),
-            color: AppColors.darkGrey,
+            color: AppColors.lightGrey,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -300,7 +300,7 @@ class Companies extends StatelessWidget {
           height: 66.h,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(44.w),
-            color: AppColors.darkGrey,
+            color: AppColors.lightGrey,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -336,7 +336,7 @@ class Companies extends StatelessWidget {
           height: 36.48.h,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(24.16.w),
-            color: AppColors.darkGrey,
+            color: AppColors.lightGrey,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -367,7 +367,7 @@ class Companies extends StatelessWidget {
       right: 155.w,
       child: OnBoardLogos(
         angle: -0.1,
-        containerColor: AppColors.darkGrey,
+        containerColor: AppColors.lightGrey,
         containerHeight: 48.66,
         containerWidth: 142.1,
         iconPath: Assets.icons.pepsi.path,
@@ -424,7 +424,7 @@ class Companies extends StatelessWidget {
           padding: EdgeInsets.only(left: 120.w),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(24.16.w),
-            color: AppColors.darkGrey,
+            color: AppColors.lightGrey,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -457,7 +457,7 @@ class Companies extends StatelessWidget {
         angle: 0.1,
         containerWidth: 235.22.w,
         containerHeight: 58.33.h,
-        containerColor: AppColors.darkGrey,
+        containerColor: AppColors.lightGrey,
         iconPath: Assets.icons.goldMan.path,
         text: "Gold Man Sachs",
       ),
@@ -487,7 +487,7 @@ class Companies extends StatelessWidget {
         angle: 0.3,
         containerWidth: 141.22,
         containerHeight: 58.33,
-        containerColor: AppColors.darkGrey,
+        containerColor: AppColors.lightGrey,
         iconPath: Assets.icons.meta.path,
         text: "Meta",
       ),

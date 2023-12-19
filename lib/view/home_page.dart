@@ -1,12 +1,11 @@
-// ignore_for_file: use_build_context_synchronously
-
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_job_boarding/components/app_colors.dart';
 import 'package:flutter_job_boarding/components/app_text.dart';
-import 'package:flutter_job_boarding/components/helper_methods.dart';
-import 'package:flutter_job_boarding/navigation/routes_name.dart';
 import 'package:flutter_job_boarding/repository/service_repository.dart';
+import 'package:flutter_job_boarding/widgets/categorie.dart';
+import 'package:flutter_job_boarding/widgets/jobs_list_view.dart';
+import 'package:flutter_job_boarding/widgets/search_job_text_field.dart';
 import 'package:flutter_job_boarding/widgets/user_name_image.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -22,29 +21,17 @@ class HomePage extends StatelessWidget {
       backgroundColor: AppColors.primaryColor,
       body: Container(
         margin: EdgeInsets.only(top: 70.h, right: 16.w, left: 16.w),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const UserNameImage(),
-            _title(),
-            ElevatedButton(
-              onPressed: () async {
-                try {
-                  RoutesNames routesNames = RoutesNames();
-                  await serviceRepository.signOut();
-
-                  AutoRouter.of(context).replaceNamed(routesNames.onBoard);
-                } catch (e) {
-                  HelperMethods.showSnackBar(
-                      context, e.toString(), AppColors.colorRed);
-                }
-              },
-              child: const Text(
-                "Sign Out",
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const UserNameImage(),
+              _title(),
+              CategorieWidget(),
+              SearchTextField(),
+              JobsListView(),
+            ],
+          ),
         ),
       ),
     );

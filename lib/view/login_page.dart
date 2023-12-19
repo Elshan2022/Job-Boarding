@@ -72,7 +72,7 @@ class _LoginPageState extends LoginViewModel {
           width: 200.w,
           margin: EdgeInsets.only(top: 80.h),
           decoration: BoxDecoration(
-            color: AppColors.darkGrey.withOpacity(0.5),
+            color: AppColors.lightGrey.withOpacity(0.5),
             borderRadius: BorderRadius.circular(15.w),
           ),
           child: Center(

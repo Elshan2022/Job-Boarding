@@ -8,7 +8,7 @@ class AppDecorations {
       backgroundColor: MaterialStateProperty.resolveWith(
         (states) {
           if (states.contains(MaterialState.disabled)) {
-            return AppColors.darkGrey;
+            return AppColors.lightGrey;
           }
           return AppColors.primaryBlue;
         },

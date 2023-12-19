@@ -8,7 +8,7 @@ class OnBoardLogos extends StatelessWidget {
       {super.key,
       this.angle = 0,
       this.containerWidth = 0,
-      this.containerColor = AppColors.darkGrey,
+      this.containerColor = AppColors.lightGrey,
       this.iconPath = "",
       this.text = "",
       this.containerHeight = 10});

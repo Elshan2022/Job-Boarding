@@ -23,7 +23,7 @@ class UserImage extends ConsumerWidget {
             width: 100.w,
             height: 100.w,
             decoration: BoxDecoration(
-              color: AppColors.darkGrey,
+              color: AppColors.lightGrey,
               borderRadius: BorderRadius.circular(15.w),
               image: image == null
                   ? DecorationImage(
