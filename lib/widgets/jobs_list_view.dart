@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_job_boarding/widgets/job_information.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class JobsListView extends StatelessWidget {
@@ -21,20 +22,7 @@ class JobsListView extends StatelessWidget {
           ),
           child: Column(
             children: [
-              Expanded(
-                flex: 2,
-                child: ClipPath(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.red,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(15.w),
-                        topRight: Radius.circular(15.w),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              JobInformation(),
               Expanded(
                 flex: 1,
                 child: Container(

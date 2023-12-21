@@ -29,7 +29,7 @@ class HomePage extends StatelessWidget {
               _title(),
               CategorieWidget(),
               SearchTextField(),
-              JobsListView(),
+              const JobsListView(),
             ],
           ),
         ),
