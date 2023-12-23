@@ -51,6 +51,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/pepsi.png
   AssetGenImage get pepsi => const AssetGenImage('assets/icons/pepsi.png');
 
+  /// File path: assets/icons/sendIcon.png
+  AssetGenImage get sendIcon =>
+      const AssetGenImage('assets/icons/sendIcon.png');
+
   /// File path: assets/icons/spotify.png
   AssetGenImage get spotify => const AssetGenImage('assets/icons/spotify.png');
 
@@ -81,6 +85,7 @@ class $AssetsIconsGen {
         morgan,
         netflix,
         pepsi,
+        sendIcon,
         spotify,
         swiggy,
         teasla,

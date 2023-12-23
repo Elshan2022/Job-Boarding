@@ -1,6 +1,7 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter_job_boarding/components/app_text.dart';
-import 'package:flutter_job_boarding/providers/random_color_provider.dart';
+import 'package:flutter_job_boarding/providers/color_provider.dart';
+import 'package:flutter_job_boarding/widgets/job_title.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -9,32 +10,24 @@ class JobInformation extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final randomColor = ref.watch(randomColorProvider);
-    final textColor = ref.watch(textColorProvider);
-    return Expanded(
-      flex: 2,
-      child: ClipPath(
-        clipper: MyClipper(),
-        child: Container(
-          width: double.infinity,
-          decoration: BoxDecoration(
-            color: randomColor,
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(15.w),
-              topRight: Radius.circular(15.w),
-            ),
+    final color = ref.watch(colorProvider(Random()));
+    return ClipPath(
+      clipper: MyClipper(),
+      child: Container(
+        height: 170.h,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(15.w),
+            topRight: Radius.circular(15.w),
           ),
-          child: Column(
-            children: [
-              Text(
-                "Project Manager",
-                style: AppText.textBold(
-                  size: 16,
-                  textColor: textColor,
-                ),
-              ),
-            ],
-          ),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            JobTitle(luminance: color.computeLuminance()),
+          ],
         ),
       ),
     );
