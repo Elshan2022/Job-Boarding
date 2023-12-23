@@ -1,6 +1,9 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter_job_boarding/gen/assets.gen.dart';
 import 'package:flutter_job_boarding/providers/color_provider.dart';
+import 'package:flutter_job_boarding/widgets/custom_chip.dart';
+import 'package:flutter_job_boarding/widgets/expandable_text.dart';
 import 'package:flutter_job_boarding/widgets/job_title.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -27,6 +30,27 @@ class JobInformation extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             JobTitle(luminance: color.computeLuminance()),
+            Row(
+              children: [
+                CustomChip(
+                  luminance: color.computeLuminance(),
+                  imagePath: Assets.icons.location.path,
+                  title: "New York",
+                ),
+                CustomChip(
+                  luminance: color.computeLuminance(),
+                  imagePath: Assets.icons.cap.path,
+                  title: "3 years exp.",
+                ),
+                CustomChip(
+                  luminance: color.computeLuminance(),
+                  imagePath: Assets.icons.clock.path,
+                  title: "Full Time",
+                ),
+              ],
+            ),
+            SizedBox(height: 5.h),
+            const ExpandableText(),
           ],
         ),
       ),

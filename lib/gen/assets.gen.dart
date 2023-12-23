@@ -25,6 +25,12 @@ class $AssetsIconsGen {
   AssetGenImage get bankOfAmerica =>
       const AssetGenImage('assets/icons/bankOfAmerica.png');
 
+  /// File path: assets/icons/cap.png
+  AssetGenImage get cap => const AssetGenImage('assets/icons/cap.png');
+
+  /// File path: assets/icons/clock.png
+  AssetGenImage get clock => const AssetGenImage('assets/icons/clock.png');
+
   /// File path: assets/icons/goldMan.png
   AssetGenImage get goldMan => const AssetGenImage('assets/icons/goldMan.png');
 
@@ -34,6 +40,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/linkedin.png
   AssetGenImage get linkedin =>
       const AssetGenImage('assets/icons/linkedin.png');
+
+  /// File path: assets/icons/location.png
+  AssetGenImage get location =>
+      const AssetGenImage('assets/icons/location.png');
 
   /// File path: assets/icons/meta.png
   AssetGenImage get meta => const AssetGenImage('assets/icons/meta.png');
@@ -77,9 +87,12 @@ class $AssetsIconsGen {
         amazon,
         apple,
         bankOfAmerica,
+        cap,
+        clock,
         goldMan,
         google,
         linkedin,
+        location,
         meta,
         microsoft,
         morgan,
