@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter_job_boarding/components/app_colors.dart';
 import 'package:flutter_job_boarding/gen/assets.gen.dart';
 import 'package:flutter_job_boarding/providers/color_provider.dart';
 import 'package:flutter_job_boarding/widgets/custom_chip.dart';
@@ -7,6 +8,7 @@ import 'package:flutter_job_boarding/widgets/expandable_text.dart';
 import 'package:flutter_job_boarding/widgets/job_title.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class JobInformation extends ConsumerWidget {
   const JobInformation({super.key});
@@ -16,42 +18,66 @@ class JobInformation extends ConsumerWidget {
     final color = ref.watch(colorProvider(Random()));
     return ClipPath(
       clipper: MyClipper(),
-      child: Container(
-        height: 170.h,
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: color,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(15.w),
-            topRight: Radius.circular(15.w),
+      child: ConstrainedBox(
+        constraints: BoxConstraints(minHeight: 170.h),
+        child: Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: color,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(15.w),
+              topRight: Radius.circular(15.w),
+            ),
+          ),
+          child: Stack(
+            children: [
+              JobTitle(luminance: color.computeLuminance()),
+              Positioned(
+                top: 70,
+                child: Row(
+                  children: [
+                    CustomChip(
+                      luminance: color.computeLuminance(),
+                      imagePath: Assets.icons.location.path,
+                      title: "New York",
+                    ),
+                    CustomChip(
+                      luminance: color.computeLuminance(),
+                      imagePath: Assets.icons.cap.path,
+                      title: "3 years exp.",
+                    ),
+                    CustomChip(
+                      luminance: color.computeLuminance(),
+                      imagePath: Assets.icons.clock.path,
+                      title: "Full Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 5.h),
+              ExpandableText(luminance: color.computeLuminance()),
+              _readMoreButton(color.computeLuminance()),
+            ],
           ),
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            JobTitle(luminance: color.computeLuminance()),
-            Row(
-              children: [
-                CustomChip(
-                  luminance: color.computeLuminance(),
-                  imagePath: Assets.icons.location.path,
-                  title: "New York",
-                ),
-                CustomChip(
-                  luminance: color.computeLuminance(),
-                  imagePath: Assets.icons.cap.path,
-                  title: "3 years exp.",
-                ),
-                CustomChip(
-                  luminance: color.computeLuminance(),
-                  imagePath: Assets.icons.clock.path,
-                  title: "Full Time",
-                ),
-              ],
-            ),
-            SizedBox(height: 5.h),
-            const ExpandableText(),
-          ],
+      ),
+    );
+  }
+
+  Positioned _readMoreButton(double luminance) {
+    return Positioned(
+      top: 124.h,
+      left: 250.w,
+      child: TextButton(
+        onPressed: () {},
+        child: Text(
+          "...Read More",
+          style: GoogleFonts.inter(
+            decoration: TextDecoration.underline,
+            color: luminance > 0.4 ? AppColors.primaryColor : Colors.white,
+            fontWeight: FontWeight.w500,
+            fontSize: 12.sp,
+          ),
         ),
       ),
     );

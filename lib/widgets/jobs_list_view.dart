@@ -22,7 +22,8 @@ class _JobsListViewState extends State<JobsListView>
     _controller = AnimationController(
         vsync: this, duration: const Duration(milliseconds: 3000))
       ..forward();
-    _animation = CurvedAnimation(parent: _controller, curve: Curves.easeInOutQuad);
+    _animation =
+        CurvedAnimation(parent: _controller, curve: Curves.easeInOutQuad);
     super.initState();
   }
 
@@ -42,22 +43,24 @@ class _JobsListViewState extends State<JobsListView>
         padding: EdgeInsets.zero,
         physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (context, index) {
-          return Container(
-            width: double.infinity,
-            height: 232.h,
-            margin: EdgeInsets.only(bottom: 15.h),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(15.w),
-            ),
-            child: Stack(
-              children: [
-                _bacgroundContainer(),
-                _viewButton(),
-                const JobInformation(),
-                _postedDuration(),
-                _salary(),
-              ],
+          return ConstrainedBox(
+            constraints: BoxConstraints(minHeight: 232.h),
+            child: Container(
+              width: double.infinity,
+              margin: EdgeInsets.only(bottom: 15.h),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(15.w),
+              ),
+              child: Stack(
+                children: [
+                  _bacgroundContainer(),
+                  _viewButton(),
+                  const JobInformation(),
+                  _postedDuration(),
+                  _salary(),
+                ],
+              ),
             ),
           );
         },
@@ -81,7 +84,7 @@ class _JobsListViewState extends State<JobsListView>
 
   Positioned _salary() {
     return Positioned(
-      top: 190.h,
+      top: 180.h,
       left: 280.w,
       child: SizedBox(
         width: 150.w,
@@ -98,7 +101,7 @@ class _JobsListViewState extends State<JobsListView>
 
   Positioned _postedDuration() {
     return Positioned(
-      top: 190.h,
+      top: 183.h,
       left: 10.w,
       child: Text(
         "Posted 2 days ago",

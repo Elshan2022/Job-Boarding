@@ -16,14 +16,14 @@ class JobTitle extends StatelessWidget {
         "Google",
         style: AppText.textMedium(
           size: 12,
-          textColor: luminance > 0.6 ? AppColors.primaryColor : Colors.white,
+          textColor: luminance > 0.4 ? AppColors.primaryColor : Colors.white,
         ),
       ),
       title: Text(
         "Flutter developer",
         style: AppText.textBold(
           size: 18,
-          textColor: luminance > 0.6 ? AppColors.primaryColor : Colors.white,
+          textColor: luminance > 0.4 ? AppColors.primaryColor : Colors.white,
         ),
       ),
       leading: Container(
