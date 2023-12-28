@@ -1,52 +1,71 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_job_boarding/components/app_colors.dart';
 import 'package:flutter_job_boarding/components/app_text.dart';
+import 'package:flutter_job_boarding/gen/assets.gen.dart';
+import 'package:flutter_job_boarding/model/job_model.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class JobTitle extends StatelessWidget {
-  const JobTitle({super.key, required this.luminance});
+  JobTitle({super.key, required this.index});
 
-  final double luminance;
+  final int index;
+
+  final List<JobModel> _list = JobModel.jobList;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      contentPadding: EdgeInsets.only(left: 10.w),
-      subtitle: Text(
-        "Google",
-        style: AppText.textMedium(
-          size: 12,
-          textColor: luminance > 0.4 ? AppColors.primaryColor : Colors.white,
+      contentPadding: EdgeInsets.zero,
+      title: Text(
+        _list[index].jobTitle,
+        style: AppText.textBold(
+          size: 14,
         ),
       ),
-      title: Text(
-        "Flutter developer",
-        style: AppText.textBold(
-          size: 18,
-          textColor: luminance > 0.4 ? AppColors.primaryColor : Colors.white,
+      subtitle: Text(
+        _list[index].jobSubtitle,
+        style: AppText.textMedium(
+          size: 12,
         ),
       ),
       leading: Container(
-        height: 48.w,
         width: 48.w,
+        height: 48.w,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.w),
           color: AppColors.primaryColor,
         ),
         child: Center(
           child: Container(
-            width: 30.w,
-            height: 30.w,
-            decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: NetworkImage(
-                    "https://blog.hubspot.com/hs-fs/hubfs/image8-2.jpg?width=600&name=image8-2.jpg",
-                  ),
-                )),
+            height: 28.w,
+            width: 28.w,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10.w),
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: NetworkImage(_list[index].jobLogo),
+              ),
+            ),
           ),
         ),
+      ),
+      trailing: RawChip(
+        avatar: Image.asset(
+          Assets.icons.sendIcon.path,
+          width: 14.w,
+          height: 14.w,
+        ),
+        label: Text(
+          "View",
+          style: AppText.textMedium(size: 14),
+        ),
+        backgroundColor: AppColors.primaryColor.withOpacity(0.8),
+        side: const BorderSide(color: Colors.white, width: 1),
+        padding: EdgeInsets.all(12.w),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15.w),
+        ),
+        onPressed: () {},
       ),
     );
   }
