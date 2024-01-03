@@ -3,21 +3,31 @@ import 'package:flutter_job_boarding/components/app_colors.dart';
 import 'package:flutter_job_boarding/components/app_text.dart';
 import 'package:flutter_job_boarding/gen/assets.gen.dart';
 import 'package:flutter_job_boarding/model/job_model.dart';
+import 'package:flutter_job_boarding/providers/read_more_provider.dart';
 import 'package:flutter_job_boarding/widgets/custom_chip.dart';
 import 'package:flutter_job_boarding/widgets/job_title.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class JobReviews extends StatelessWidget {
-  JobReviews({super.key, required this.index});
+class JobReviews extends ConsumerStatefulWidget {
+  const JobReviews({super.key, required this.index});
 
   final int index;
+
+  @override
+  ConsumerState<JobReviews> createState() => _JobReviewsState();
+}
+
+class _JobReviewsState extends ConsumerState<JobReviews>
+    with SingleTickerProviderStateMixin {
   final Radius radius = Radius.circular(15.w);
   final List<JobModel> _list = JobModel.jobList;
 
   @override
   Widget build(BuildContext context) {
+    final description = ref.watch(readMoreProvider(widget.index));
     return Container(
-      height: _list[index].description.length + 100,
       decoration: BoxDecoration(
         color: AppColors.primaryBlue,
         borderRadius: BorderRadius.only(topLeft: radius, topRight: radius),
@@ -27,7 +37,7 @@ class JobReviews extends StatelessWidget {
         child: Stack(
           children: [
             //job logo
-            JobTitle(index: index),
+            JobTitle(index: widget.index),
             //custom chips
             Container(
               margin: EdgeInsets.only(top: 80.h),
@@ -36,25 +46,48 @@ class JobReviews extends StatelessWidget {
                 children: [
                   CustomChip(
                     imagePath: Assets.icons.location.path,
-                    title: _list[index].jobLocation,
+                    title: _list[widget.index].jobLocation,
                   ),
                   CustomChip(
                     imagePath: Assets.icons.cap.path,
-                    title: "${_list[index].experience} years exp.",
+                    title: "${_list[widget.index].experience} years exp.",
                   ),
                   CustomChip(
                     imagePath: Assets.icons.clock.path,
-                    title: _list[index].jobTime,
+                    title: _list[widget.index].jobTime,
                   ),
                 ],
               ),
             ),
 
+            //description
             Container(
               margin: EdgeInsets.only(top: 130.h),
               child: Text(
-                _list[index].description,
+                description,
                 style: AppText.textMedium(size: 14),
+              ),
+            ),
+
+            //read more button
+
+            InkWell(
+              onTap: () {
+                ref
+                    .read(readMoreProvider(widget.index).notifier)
+                    .showMore(widget.index, _list);
+              },
+              child: Container(
+                margin: EdgeInsets.only(top: 149.h, left: 312.w),
+                child: Text(
+                  "...Read more",
+                  style: GoogleFonts.inter(
+                    decoration: TextDecoration.underline,
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.white,
+                  ),
+                ),
               ),
             ),
           ],

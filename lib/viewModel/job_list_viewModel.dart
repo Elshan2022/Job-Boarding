@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter_job_boarding/model/job_model.dart';
 import 'package:flutter_job_boarding/widgets/jobs_list_view.dart';
 import 'package:flutter/material.dart';
