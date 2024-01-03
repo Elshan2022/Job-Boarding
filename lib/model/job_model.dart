@@ -66,7 +66,7 @@ class JobModel {
       jobTime: "Full time",
       salary: "70",
       description:
-          "Apple was founded as Apple Computer Company on April 1, 1976, by Steve Wozniak, Steve Jobs and Ronald Wayne to develop and sell Wozniak's Apple I personal computer. It was incorporated by Jobs and Wozniak in 1977. The company's second computer, the Apple II, became a best seller and one of the first mass-produced microcomputers. Apple went public in 1980 to instant financial success. The company developed computers featuring innovative graphical user interfaces, including the 1984 original Macintosh, announced that year in a critically acclaimed advertisement called",
+          "Apple was founded as Apple Computer Company on April 1, 1976 , by Steve Wozniak , and  to develop and sell Wozniak's Apple I personal computer. It was incorporated by Jobs and Wozniak in 1977. The company's second computer, the Apple II, became a best seller and one of the first mass-produced microcomputers. Apple went public in 1980 to instant financial success. The company developed computers featuring innovative graphical user interfaces, including the 1984 original Macintosh, announced that year in a critically acclaimed advertisement called",
     ),
     JobModel(
        id:const Uuid().v4() ,

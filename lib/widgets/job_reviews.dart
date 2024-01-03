@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_job_boarding/components/app_colors.dart';
 import 'package:flutter_job_boarding/components/app_text.dart';
@@ -27,6 +28,7 @@ class _JobReviewsState extends ConsumerState<JobReviews>
   @override
   Widget build(BuildContext context) {
     final description = ref.watch(readMoreProvider(widget.index));
+    final isExpand = ref.watch(isExpandProvider.notifier);
     return Container(
       decoration: BoxDecoration(
         color: AppColors.primaryBlue,
@@ -61,32 +63,27 @@ class _JobReviewsState extends ConsumerState<JobReviews>
             ),
 
             //description
+
             Container(
               margin: EdgeInsets.only(top: 130.h),
-              child: Text(
-                description,
-                style: AppText.textMedium(size: 14),
-              ),
-            ),
-
-            //read more button
-
-            InkWell(
-              onTap: () {
-                ref
-                    .read(readMoreProvider(widget.index).notifier)
-                    .showMore(widget.index, _list);
-              },
-              child: Container(
-                margin: EdgeInsets.only(top: 149.h, left: 312.w),
-                child: Text(
-                  "...Read more",
-                  style: GoogleFonts.inter(
-                    decoration: TextDecoration.underline,
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white,
-                  ),
+              child: RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: description,
+                      style: AppText.textMedium(size: 14),
+                    ),
+                    TextSpan(
+                      text: isExpand.state ? "...Read Less" : "...Read More",
+                      style: AppText.textBold(size: 14),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          ref
+                              .read(readMoreProvider(widget.index).notifier)
+                              .showMore(widget.index, _list);
+                        },
+                    ),
+                  ],
                 ),
               ),
             ),
