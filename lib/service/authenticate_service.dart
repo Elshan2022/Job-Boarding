@@ -10,6 +10,7 @@ abstract class IAuthenticateService {
   Future<void> signIn(String? email, String? password);
   Future<void> signUp(SignUpModel model, WidgetRef ref);
   Future<void> signOut();
+  Future<Map<String, dynamic>?> getUserData();
 
   final FirebaseAuth auth;
   final FirebaseFirestore firestore;
@@ -64,6 +65,7 @@ class AuthenticateService extends IAuthenticateService {
         final reference = storage.ref().child("user_image/${model.name}.jpg");
         await reference.putFile(userImage);
         imageUrl = await reference.getDownloadURL();
+        
       }
 
       await firestore.collection("users").doc(userId).set(
@@ -77,6 +79,21 @@ class AuthenticateService extends IAuthenticateService {
           "imageUrl": imageUrl,
         },
       );
+    } on FirebaseException catch (e) {
+      throw CustomException(errorMessage: e.message.toString());
+    }
+  }
+
+  @override
+  Future<Map<String, dynamic>?> getUserData() async {
+    try {
+      if (auth.currentUser != null) {
+        final userId = auth.currentUser!.uid;
+        final snapshot = await firestore.collection("users").doc(userId).get();
+        return snapshot.data() as Map<String, dynamic>;
+      } else {
+        return null;
+      }
     } on FirebaseException catch (e) {
       throw CustomException(errorMessage: e.message.toString());
     }

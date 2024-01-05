@@ -28,7 +28,7 @@ class _JobsListViewState extends JobListViewModel {
             decoration: _decoration(),
             child: Column(
               children: [
-                JobReviews(index: index),
+                JobReview(index: index),
                 JobSalaryDuration(index: index),
               ],
             ),

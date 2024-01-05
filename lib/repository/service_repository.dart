@@ -23,4 +23,9 @@ class ServiceRepository {
   Future<void> signOut() async {
     await service.signOut();
   }
+
+  Future<Map<String, dynamic>?> getUserData() async {
+    final data = await service.getUserData();
+    return data;
+  }
 }
