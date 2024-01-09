@@ -4,6 +4,11 @@ class RoutesNames {
   final String _homePage = "/home";
   final String _splash = "/splash";
   final String _onBoard = "/onBoard";
+  final String _search = "/search";
+
+  String get search {
+    return _search;
+  }
 
   String get login {
     return _login;

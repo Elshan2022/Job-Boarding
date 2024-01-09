@@ -38,7 +38,6 @@ class _HomePageState extends State<HomePage> {
       future: _userData,
       builder: (context, snapshot) {
         bool isDone = snapshot.connectionState == ConnectionState.done;
-
         if (isDone && snapshot.hasData) {
           return Scaffold(
             backgroundColor: AppColors.primaryColor,

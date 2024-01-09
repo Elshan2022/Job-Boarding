@@ -8,51 +8,58 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i6;
-import 'package:flutter/material.dart' as _i7;
+import 'package:auto_route/auto_route.dart' as _i7;
+import 'package:flutter/material.dart' as _i8;
 import 'package:flutter_job_boarding/view/home_page.dart' as _i1;
-import 'package:flutter_job_boarding/view/login_page.dart' as _i2;
-import 'package:flutter_job_boarding/view/onboard_page.dart' as _i3;
-import 'package:flutter_job_boarding/view/sign_up_page.dart' as _i4;
-import 'package:flutter_job_boarding/view/splash_page.dart' as _i5;
+import 'package:flutter_job_boarding/view/job_search_page.dart' as _i2;
+import 'package:flutter_job_boarding/view/login_page.dart' as _i3;
+import 'package:flutter_job_boarding/view/onboard_page.dart' as _i4;
+import 'package:flutter_job_boarding/view/sign_up_page.dart' as _i5;
+import 'package:flutter_job_boarding/view/splash_page.dart' as _i6;
 
-abstract class $AppRouter extends _i6.RootStackRouter {
+abstract class $AppRouter extends _i7.RootStackRouter {
   $AppRouter({super.navigatorKey});
 
   @override
-  final Map<String, _i6.PageFactory> pagesMap = {
+  final Map<String, _i7.PageFactory> pagesMap = {
     HomeRoute.name: (routeData) {
-      final args =
-          routeData.argsAs<HomeRouteArgs>(orElse: () => const HomeRouteArgs());
-      return _i6.AutoRoutePage<dynamic>(
+      return _i7.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i1.HomePage(key: args.key),
+        child: const _i1.HomePage(),
+      );
+    },
+    JobSearchRoute.name: (routeData) {
+      final args = routeData.argsAs<JobSearchRouteArgs>(
+          orElse: () => const JobSearchRouteArgs());
+      return _i7.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: _i2.JobSearchPage(key: args.key),
       );
     },
     LoginRoute.name: (routeData) {
-      return _i6.AutoRoutePage<dynamic>(
+      return _i7.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i2.LoginPage(),
+        child: const _i3.LoginPage(),
       );
     },
     OnBoard.name: (routeData) {
       final args =
           routeData.argsAs<OnBoardArgs>(orElse: () => const OnBoardArgs());
-      return _i6.AutoRoutePage<dynamic>(
+      return _i7.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i3.OnBoard(key: args.key),
+        child: _i4.OnBoard(key: args.key),
       );
     },
     SignupRoute.name: (routeData) {
-      return _i6.AutoRoutePage<dynamic>(
+      return _i7.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i4.SignupPage(),
+        child: const _i5.SignupPage(),
       );
     },
     SpashRoute.name: (routeData) {
-      return _i6.AutoRoutePage<dynamic>(
+      return _i7.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i5.SpashPage(),
+        child: const _i6.SpashPage(),
       );
     },
   };
@@ -60,37 +67,51 @@ abstract class $AppRouter extends _i6.RootStackRouter {
 
 /// generated route for
 /// [_i1.HomePage]
-class HomeRoute extends _i6.PageRouteInfo<HomeRouteArgs> {
-  HomeRoute({
-    _i7.Key? key,
-    List<_i6.PageRouteInfo>? children,
-  }) : super(
+class HomeRoute extends _i7.PageRouteInfo<void> {
+  const HomeRoute({List<_i7.PageRouteInfo>? children})
+      : super(
           HomeRoute.name,
-          args: HomeRouteArgs(key: key),
           initialChildren: children,
         );
 
   static const String name = 'HomeRoute';
 
-  static const _i6.PageInfo<HomeRouteArgs> page =
-      _i6.PageInfo<HomeRouteArgs>(name);
+  static const _i7.PageInfo<void> page = _i7.PageInfo<void>(name);
 }
 
-class HomeRouteArgs {
-  const HomeRouteArgs({this.key});
+/// generated route for
+/// [_i2.JobSearchPage]
+class JobSearchRoute extends _i7.PageRouteInfo<JobSearchRouteArgs> {
+  JobSearchRoute({
+    _i8.Key? key,
+    List<_i7.PageRouteInfo>? children,
+  }) : super(
+          JobSearchRoute.name,
+          args: JobSearchRouteArgs(key: key),
+          initialChildren: children,
+        );
 
-  final _i7.Key? key;
+  static const String name = 'JobSearchRoute';
+
+  static const _i7.PageInfo<JobSearchRouteArgs> page =
+      _i7.PageInfo<JobSearchRouteArgs>(name);
+}
+
+class JobSearchRouteArgs {
+  const JobSearchRouteArgs({this.key});
+
+  final _i8.Key? key;
 
   @override
   String toString() {
-    return 'HomeRouteArgs{key: $key}';
+    return 'JobSearchRouteArgs{key: $key}';
   }
 }
 
 /// generated route for
-/// [_i2.LoginPage]
-class LoginRoute extends _i6.PageRouteInfo<void> {
-  const LoginRoute({List<_i6.PageRouteInfo>? children})
+/// [_i3.LoginPage]
+class LoginRoute extends _i7.PageRouteInfo<void> {
+  const LoginRoute({List<_i7.PageRouteInfo>? children})
       : super(
           LoginRoute.name,
           initialChildren: children,
@@ -98,15 +119,15 @@ class LoginRoute extends _i6.PageRouteInfo<void> {
 
   static const String name = 'LoginRoute';
 
-  static const _i6.PageInfo<void> page = _i6.PageInfo<void>(name);
+  static const _i7.PageInfo<void> page = _i7.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i3.OnBoard]
-class OnBoard extends _i6.PageRouteInfo<OnBoardArgs> {
+/// [_i4.OnBoard]
+class OnBoard extends _i7.PageRouteInfo<OnBoardArgs> {
   OnBoard({
-    _i7.Key? key,
-    List<_i6.PageRouteInfo>? children,
+    _i8.Key? key,
+    List<_i7.PageRouteInfo>? children,
   }) : super(
           OnBoard.name,
           args: OnBoardArgs(key: key),
@@ -115,13 +136,13 @@ class OnBoard extends _i6.PageRouteInfo<OnBoardArgs> {
 
   static const String name = 'OnBoard';
 
-  static const _i6.PageInfo<OnBoardArgs> page = _i6.PageInfo<OnBoardArgs>(name);
+  static const _i7.PageInfo<OnBoardArgs> page = _i7.PageInfo<OnBoardArgs>(name);
 }
 
 class OnBoardArgs {
   const OnBoardArgs({this.key});
 
-  final _i7.Key? key;
+  final _i8.Key? key;
 
   @override
   String toString() {
@@ -130,9 +151,9 @@ class OnBoardArgs {
 }
 
 /// generated route for
-/// [_i4.SignupPage]
-class SignupRoute extends _i6.PageRouteInfo<void> {
-  const SignupRoute({List<_i6.PageRouteInfo>? children})
+/// [_i5.SignupPage]
+class SignupRoute extends _i7.PageRouteInfo<void> {
+  const SignupRoute({List<_i7.PageRouteInfo>? children})
       : super(
           SignupRoute.name,
           initialChildren: children,
@@ -140,13 +161,13 @@ class SignupRoute extends _i6.PageRouteInfo<void> {
 
   static const String name = 'SignupRoute';
 
-  static const _i6.PageInfo<void> page = _i6.PageInfo<void>(name);
+  static const _i7.PageInfo<void> page = _i7.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i5.SpashPage]
-class SpashRoute extends _i6.PageRouteInfo<void> {
-  const SpashRoute({List<_i6.PageRouteInfo>? children})
+/// [_i6.SpashPage]
+class SpashRoute extends _i7.PageRouteInfo<void> {
+  const SpashRoute({List<_i7.PageRouteInfo>? children})
       : super(
           SpashRoute.name,
           initialChildren: children,
@@ -154,5 +175,5 @@ class SpashRoute extends _i6.PageRouteInfo<void> {
 
   static const String name = 'SpashRoute';
 
-  static const _i6.PageInfo<void> page = _i6.PageInfo<void>(name);
+  static const _i7.PageInfo<void> page = _i7.PageInfo<void>(name);
 }

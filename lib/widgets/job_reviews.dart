@@ -11,11 +11,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class JobReview extends ConsumerWidget {
-  JobReview({super.key, required this.index});
+  JobReview({super.key, required this.index, required this.jobList});
 
   final int index;
   final Radius radius = Radius.circular(15.w);
-  final List<JobModel> _list = JobModel.jobList;
+  final List<JobModel> jobList;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -40,16 +40,15 @@ class JobReview extends ConsumerWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CustomChip(
-                    imagePath: Assets.icons.location.path,
-                    title: _list[index].jobLocation,
-                  ),
+                      imagePath: Assets.icons.location.path,
+                      title: jobList[index].jobLocation),
                   CustomChip(
                     imagePath: Assets.icons.cap.path,
-                    title: "${_list[index].experience} years exp.",
+                    title: "${jobList[index].experience} years exp.",
                   ),
                   CustomChip(
                     imagePath: Assets.icons.clock.path,
-                    title: _list[index].jobTime,
+                    title: jobList[index].jobTime,
                   ),
                 ],
               ),
@@ -71,7 +70,7 @@ class JobReview extends ConsumerWidget {
                         ..onTap = () {
                           ref
                               .read(readMoreProvider(index).notifier)
-                              .showMore(index, _list);
+                              .showMore(index, jobList);
                         },
                     ),
                   ],
