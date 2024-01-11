@@ -10,7 +10,7 @@ class JobSalaryDuration extends ConsumerWidget {
 
   final int index;
   final Radius radius = Radius.circular(15.w);
-  final List<JobModel> jobList;
+  final List<JobModel> jobList ;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

@@ -20,9 +20,10 @@ class JobSearchPage extends ConsumerStatefulWidget {
 class _JobSearchPageState extends ConsumerState<JobSearchPage> {
   final BorderRadius _borderRadius = BorderRadius.circular(10.w);
   final String _hintText = "Search for company or role...";
-  List<JobModel> jobs = [];
+  List<JobModel> jobs = JobModel.jobList;
   @override
   Widget build(BuildContext context) {
+    final searchJobs = ref.watch(jobSearchProvider);
     return Scaffold(
       backgroundColor: AppColors.primaryColor,
       appBar: AppBar(
@@ -64,16 +65,14 @@ class _JobSearchPageState extends ConsumerState<JobSearchPage> {
                     ),
                   ),
                   onChanged: (value) {
-                    setState(() {
-                      jobs = ref.read(searchJobProvider(value));
-                    });
+                    ref.read(jobSearchProvider.notifier).searchJob(value);
                   },
                 ),
               ),
               ListView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                itemCount: jobs.length,
+                itemCount: searchJobs.isEmpty ? jobs.length : searchJobs.length,
                 itemBuilder: (context, index) {
                   return Container(
                     width: double.infinity,
@@ -81,8 +80,14 @@ class _JobSearchPageState extends ConsumerState<JobSearchPage> {
                     decoration: _decoration(),
                     child: Column(
                       children: [
-                        JobReview(jobList: jobs, index: index),
-                        JobSalaryDuration(jobList: jobs, index: index),
+                        JobReview(
+                          jobList: searchJobs.isEmpty ? jobs : searchJobs,
+                          index: index,
+                        ),
+                        JobSalaryDuration(
+                          jobList: searchJobs.isEmpty ? jobs : searchJobs,
+                          index: index,
+                        ),
                       ],
                     ),
                   );

@@ -32,7 +32,7 @@ class JobReview extends ConsumerWidget {
         child: Stack(
           children: [
             //job logo
-            JobTitle(index: index),
+            JobTitle(index: index, jobs: jobList),
             //custom chips
             Container(
               margin: EdgeInsets.only(top: 80.h),

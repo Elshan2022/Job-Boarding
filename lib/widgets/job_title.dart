@@ -6,24 +6,23 @@ import 'package:flutter_job_boarding/model/job_model.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class JobTitle extends StatelessWidget {
-  JobTitle({super.key, required this.index});
+  const JobTitle({super.key, required this.index, required this.jobs});
 
   final int index;
-
-  final List<JobModel> _list = JobModel.jobList;
+  final List<JobModel> jobs;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
       contentPadding: EdgeInsets.zero,
       title: Text(
-        _list[index].jobTitle,
+        jobs[index].jobTitle,
         style: AppText.textBold(
           size: 14,
         ),
       ),
       subtitle: Text(
-        _list[index].jobSubtitle,
+        jobs[index].jobSubtitle,
         style: AppText.textMedium(
           size: 12,
         ),
@@ -43,7 +42,7 @@ class JobTitle extends StatelessWidget {
               borderRadius: BorderRadius.circular(10.w),
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: NetworkImage(_list[index].jobLogo),
+                image: NetworkImage(jobs[index].jobLogo),
               ),
             ),
           ),
