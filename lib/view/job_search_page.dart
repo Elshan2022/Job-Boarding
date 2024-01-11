@@ -9,6 +9,9 @@ import 'package:flutter_job_boarding/widgets/salary_duration.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+
+//hiiii elsennn
+
 @RoutePage()
 class JobSearchPage extends ConsumerStatefulWidget {
   const JobSearchPage({super.key});
