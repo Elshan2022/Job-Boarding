@@ -11,7 +11,9 @@ class JobModel {
   final String salary;
   final String description;
   final String id;
+  final List<String> skills;
   JobModel({
+    required this.skills,
     required this.id,
     required this.jobLogo,
     required this.jobTitle,
@@ -26,6 +28,14 @@ class JobModel {
 
   static List<JobModel> jobList = [
     JobModel(
+      skills: [
+        "Flutter",
+        "Dart",
+        "Firebase",
+        "Google Map",
+        "Rest Api",
+        "Riverpod"
+      ],
       id: const Uuid().v4(),
       jobLogo:
           "https://blog.hubspot.com/hs-fs/hubfs/image8-2.jpg?width=600&name=image8-2.jpg",
@@ -40,6 +50,14 @@ class JobModel {
           "Kyla helps you live longer. First, Kyla collects your medical history, blood sample, and DNA. Then, Kyla AI analyzes your medical data to identify your top health risks, estimate your remaining lifetime, and give you simple, doctor-validated daily goals to increase your life expectancy. Finally, Kyla monitors your progress 27, diagnoses, and treats your conditions with the help of doctors.",
     ),
     JobModel(
+      skills: [
+        "Flutter",
+        "Dart",
+        "Firebase",
+        "Google Map",
+        "Rest Api",
+        "Riverpod"
+      ],
       id: const Uuid().v4(),
       jobLogo:
           "https://yt3.googleusercontent.com/ytc/AIf8zZQKCG8w7wVznj9sHhrHge3cKYVuUblDUuOaUp_psQ=s900-c-k-c0x00ffffff-no-rj",
@@ -54,6 +72,14 @@ class JobModel {
           "Launched on January 16, 2007, nearly a decade after Netflix, Inc. began its pioneering DVD‑by‑mail movie rental service, Netflix is the most-subscribed video on demand streaming media service, with 238.39 million paid memberships in more than 190 countries.[7] By 2022, Netflix Original productions accounted for half of its library in the United States and the namesake company had ventured into other categories, such as video game publishing of mobile games via its flagship service. As of October 2023, Netflix is the 24th most-visited website in the world with 23.66% of its traffic coming from the United States, followed by the United Kingdom at 5.84% and Brazil at 5.64%",
     ),
     JobModel(
+      skills: [
+        "Flutter",
+        "Dart",
+        "Firebase",
+        "Google Map",
+        "Rest Api",
+        "Riverpod"
+      ],
       id: const Uuid().v4(),
       jobLogo:
           "https://pbs.twimg.com/profile_images/1717013664954499072/2dcJ0Unw_400x400.png",
@@ -68,6 +94,14 @@ class JobModel {
           "Apple was founded as Apple Computer Company on April 1, 1976 , by Steve Wozniak , and  to develop and sell Wozniak's Apple I personal computer. It was incorporated by Jobs and Wozniak in 1977. The company's second computer, the Apple II, became a best seller and one of the first mass-produced microcomputers. Apple went public in 1980 to instant financial success. The company developed computers featuring innovative graphical user interfaces, including the 1984 original Macintosh, announced that year in a critically acclaimed advertisement called",
     ),
     JobModel(
+      skills: [
+        "Flutter",
+        "Dart",
+        "Firebase",
+        "Google Map",
+        "Rest Api",
+        "Riverpod"
+      ],
       id: const Uuid().v4(),
       jobLogo:
           "https://cdn.sanity.io/images/599r6htc/localized/a1f3e95a4f9fc7b6ae619e93eeb4ccae3f3ff418-1560x1560.png",

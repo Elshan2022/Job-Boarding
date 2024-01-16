@@ -31,6 +31,13 @@ class $AssetsIconsGen {
   /// File path: assets/icons/clock.png
   AssetGenImage get clock => const AssetGenImage('assets/icons/clock.png');
 
+  /// File path: assets/icons/confirmIcon.png
+  AssetGenImage get confirmIcon =>
+      const AssetGenImage('assets/icons/confirmIcon.png');
+
+  /// File path: assets/icons/edit.png
+  AssetGenImage get edit => const AssetGenImage('assets/icons/edit.png');
+
   /// File path: assets/icons/goldMan.png
   AssetGenImage get goldMan => const AssetGenImage('assets/icons/goldMan.png');
 
@@ -89,6 +96,8 @@ class $AssetsIconsGen {
         bankOfAmerica,
         cap,
         clock,
+        confirmIcon,
+        edit,
         goldMan,
         google,
         linkedin,

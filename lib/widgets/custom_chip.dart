@@ -7,10 +7,12 @@ class CustomChip extends StatelessWidget {
     super.key,
     required this.imagePath,
     required this.title,
+    this.chipColor = Colors.white,
   });
 
   final String imagePath;
   final String title;
+  final Color chipColor;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,7 @@ class CustomChip extends StatelessWidget {
         color: Colors.transparent,
         border: Border.all(
           width: 1.5,
-          color: Colors.white,
+          color: chipColor,
         ),
       ),
       child: Wrap(
@@ -32,13 +34,13 @@ class CustomChip extends StatelessWidget {
             imagePath,
             width: 13.33.w,
             height: 13.33.w,
-            color: Colors.white,
+            color: chipColor,
           ),
           Text(
             title,
             style: AppText.textMedium(
               size: 13,
-              textColor: Colors.white,
+              textColor: chipColor,
             ),
           ),
         ],

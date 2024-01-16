@@ -5,6 +5,11 @@ class RoutesNames {
   final String _splash = "/splash";
   final String _onBoard = "/onBoard";
   final String _search = "/search";
+  final String _detail = "/detail";
+
+  String get jobDetail {
+    return _detail;
+  }
 
   String get search {
     return _search;
