@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_job_boarding/components/app_colors.dart';
+import 'package:flutter_job_boarding/components/app_text.dart';
 import 'package:flutter_job_boarding/gen/assets.gen.dart';
 import 'package:flutter_job_boarding/model/job_model.dart';
 import 'package:flutter_job_boarding/widgets/job_details_title_component.dart';
@@ -28,30 +29,48 @@ class SkillsAndRequirments extends StatelessWidget {
             title: "Skills & Requirments",
             titleWidth: 230,
           ),
-          ListView.builder(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            itemCount: _jobs[index].skills.length,
-            itemBuilder: (context, skillsIndex) {
-              return Container(
-                color: Colors.red,
-                margin: EdgeInsets.only(bottom: 10.h),
-                child: ListTile(
-                  contentPadding: EdgeInsets.zero,
-                  leading: Icon(
-                    Icons.fiber_manual_record,
-                    size: 10.w,
-                    color: Colors.white,
+          Container(
+            margin: EdgeInsets.only(top: 15.h),
+            child: ListView.builder(
+              shrinkWrap: true,
+              padding: EdgeInsets.zero,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: _jobs[index].skills.length,
+              itemBuilder: (context, skillsIndex) {
+                return Container(
+                  margin: EdgeInsets.only(bottom: 12.h),
+                  child: Row(
+                    children: [
+                      _reordIcon(),
+                      SizedBox(width: 10.h),
+                      _skills(skillsIndex),
+                    ],
                   ),
-                  title: Text(
-                    _jobs[index].skills[skillsIndex],
-                  ),
-                ),
-              );
-            },
+                );
+              },
+            ),
           )
         ],
       ),
+    );
+  }
+
+  Expanded _skills(int skillsIndex) {
+    return Expanded(
+      child: Text(
+        _jobs[index].skills[skillsIndex],
+        maxLines: 2,
+        overflow: TextOverflow.ellipsis,
+        style: AppText.textMedium(size: 16),
+      ),
+    );
+  }
+
+  Icon _reordIcon() {
+    return Icon(
+      Icons.fiber_manual_record,
+      size: 10.w,
+      color: Colors.white,
     );
   }
 }

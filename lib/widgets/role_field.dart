@@ -6,40 +6,37 @@ import 'package:flutter_job_boarding/model/job_model.dart';
 import 'package:flutter_job_boarding/widgets/job_details_title_component.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class JobDescriptionFeild extends StatelessWidget {
-  JobDescriptionFeild({super.key, required this.index});
+class RoleField extends StatelessWidget {
+  RoleField({super.key, required this.index});
 
   final int index;
+
   final List<JobModel> _jobs = JobModel.jobList;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
+      padding: EdgeInsets.all(8.w),
       margin: EdgeInsets.only(top: 15.h),
       decoration: BoxDecoration(
         color: AppColors.primaryLight,
         borderRadius: BorderRadius.circular(24.w),
       ),
-      child: Padding(
-        padding: EdgeInsets.all(8.w),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            JobDetailTitleComponent(
-              iconPath: Assets.icons.edit.path,
-              title: "Job Description",
-              titleWidth: 190,
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 8.w),
-              child: Text(
-                _jobs[index].description,
-                style: AppText.textMedium(size: 16),
-              ),
-            )
-          ],
-        ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          JobDetailTitleComponent(
+            iconPath: Assets.icons.person.path,
+            title: "Your role",
+            titleWidth: 130,
+          ),
+          SizedBox(height: 10.h),
+          Text(
+            _jobs[index].role,
+            style: AppText.textMedium(size: 16),
+          ),
+        ],
       ),
     );
   }

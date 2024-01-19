@@ -12,7 +12,9 @@ class JobModel {
   final String description;
   final String id;
   final List<String> skills;
+  final String role;
   JobModel({
+    required this.role,
     required this.skills,
     required this.id,
     required this.jobLogo,
@@ -37,6 +39,8 @@ class JobModel {
         "Riverpod"
       ],
       id: const Uuid().v4(),
+      role:
+          "One simple, yet powerful idea is to reconsider your building blocks and design your organisational chart as a collection of job roles rather than job positions. This easy-to-implement change has a major impact on your organisation’s agility and adaptability. It also permits employees to personalise their job to match their individual strengths and motivation",
       jobLogo:
           "https://blog.hubspot.com/hs-fs/hubfs/image8-2.jpg?width=600&name=image8-2.jpg",
       jobTitle: "Flutter developer",
@@ -58,6 +62,8 @@ class JobModel {
         "Rest Api",
         "Riverpod"
       ],
+      role:
+          "One simple, yet powerful idea is to reconsider your building blocks and design your organisational chart as a collection of job roles rather than job positions. This easy-to-implement change has a major impact on your organisation’s agility and adaptability. It also permits employees to personalise their job to match their individual strengths and motivation",
       id: const Uuid().v4(),
       jobLogo:
           "https://yt3.googleusercontent.com/ytc/AIf8zZQKCG8w7wVznj9sHhrHge3cKYVuUblDUuOaUp_psQ=s900-c-k-c0x00ffffff-no-rj",
@@ -80,6 +86,8 @@ class JobModel {
         "Rest Api",
         "Riverpod"
       ],
+      role:
+          "One simple, yet powerful idea is to reconsider your building blocks and design your organisational chart as a collection of job roles rather than job positions. This easy-to-implement change has a major impact on your organisation’s agility and adaptability. It also permits employees to personalise their job to match their individual strengths and motivation",
       id: const Uuid().v4(),
       jobLogo:
           "https://pbs.twimg.com/profile_images/1717013664954499072/2dcJ0Unw_400x400.png",
@@ -102,6 +110,8 @@ class JobModel {
         "Rest Api",
         "Riverpod"
       ],
+      role:
+          "One simple, yet powerful idea is to reconsider your building blocks and design your organisational chart as a collection of job roles rather than job positions. This easy-to-implement change has a major impact on your organisation’s agility and adaptability. It also permits employees to personalise their job to match their individual strengths and motivation",
       id: const Uuid().v4(),
       jobLogo:
           "https://cdn.sanity.io/images/599r6htc/localized/a1f3e95a4f9fc7b6ae619e93eeb4ccae3f3ff418-1560x1560.png",
