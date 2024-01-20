@@ -18,7 +18,7 @@ class RoleField extends StatelessWidget {
     return Container(
       width: double.infinity,
       padding: EdgeInsets.all(8.w),
-      margin: EdgeInsets.only(top: 15.h),
+      margin: EdgeInsets.only(top: 15.h, bottom: 70.h),
       decoration: BoxDecoration(
         color: AppColors.primaryLight,
         borderRadius: BorderRadius.circular(24.w),

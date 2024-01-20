@@ -48,7 +48,9 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     UserNameImage(
-                        imageUrl: snapshot.data!["imageUrl"], userName: snapshot.data!["name"]),
+                      imageUrl: snapshot.data!["imageUrl"],
+                      userName: snapshot.data!["name"],
+                    ),
                     _title(),
                     CategorieWidget(),
                     SearchTextField(),
