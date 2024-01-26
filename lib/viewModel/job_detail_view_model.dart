@@ -82,10 +82,11 @@ abstract class JobDetailViewModel extends State<JobDetailPage> {
 
   @override
   void initState() {
-    _getUserData();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       _showButtons();
     });
+    _getUserData();
+
     super.initState();
   }
 

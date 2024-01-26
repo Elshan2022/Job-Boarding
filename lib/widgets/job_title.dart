@@ -5,27 +5,30 @@ import 'package:flutter_job_boarding/components/app_text.dart';
 import 'package:flutter_job_boarding/gen/assets.gen.dart';
 import 'package:flutter_job_boarding/model/job_model.dart';
 import 'package:flutter_job_boarding/navigation/routes_name.dart';
+import 'package:flutter_job_boarding/providers/selected_index.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class JobTitle extends StatelessWidget {
+class JobTitle extends ConsumerWidget {
   JobTitle({super.key, required this.index, required this.jobs});
 
   final int index;
   final List<JobModel> jobs;
+
   final RoutesNames _routesNames = RoutesNames();
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return ListTile(
       contentPadding: EdgeInsets.zero,
       title: _title(),
       subtitle: _subTitle(),
       leading: _leadingIcon(),
-      trailing: _trailingIcon(context),
+      trailing: _trailingIcon(context, ref),
     );
   }
 
-  RawChip _trailingIcon(BuildContext context) {
+  RawChip _trailingIcon(BuildContext context, WidgetRef ref) {
     return RawChip(
       avatar: Image.asset(
         Assets.icons.sendIcon.path,
@@ -43,6 +46,8 @@ class JobTitle extends StatelessWidget {
         borderRadius: BorderRadius.circular(15.w),
       ),
       onPressed: () {
+        final selectedIndex = ref.read(selectedIndexProvider.notifier);
+        selectedIndex.state = index;
         AutoRouter.of(context).pushNamed(_routesNames.jobDetail);
       },
     );
