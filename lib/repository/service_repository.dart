@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter_job_boarding/model/job_model.dart';
 import 'package:flutter_job_boarding/model/sign_up_model.dart';
 import 'package:flutter_job_boarding/service/authenticate_service.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -11,6 +12,10 @@ class ServiceRepository {
     firestore: FirebaseFirestore.instance,
     storage: FirebaseStorage.instance,
   );
+
+  Future<void> saveJob(JobModel model) async {
+    await service.savedJob(model);
+  }
 
   Future<void> signUp(SignUpModel model, WidgetRef ref) async {
     await service.signUp(model, ref);

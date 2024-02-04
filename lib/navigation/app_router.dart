@@ -14,5 +14,6 @@ class AppRouter extends $AppRouter {
         AutoRoute(page: SpashRoute.page, path: routesNames.splash),
         AutoRoute(page: JobSearchRoute.page, path: routesNames.search),
         AutoRoute(page: JobDetailRoute.page, path: routesNames.jobDetail),
+        AutoRoute(page: ApplyRoute.page, path: routesNames.apply),
       ];
 }

@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_job_boarding/customException/custom_exception.dart';
+import 'package:flutter_job_boarding/model/job_model.dart';
 import 'package:flutter_job_boarding/model/sign_up_model.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter_job_boarding/providers/user_image_provider.dart';
@@ -11,6 +12,7 @@ abstract class IAuthenticateService {
   Future<void> signUp(SignUpModel model, WidgetRef ref);
   Future<void> signOut();
   Future<Map<String, dynamic>?> getUserData();
+  Future<void> savedJob(JobModel model);
 
   final FirebaseAuth auth;
   final FirebaseFirestore firestore;
@@ -65,7 +67,6 @@ class AuthenticateService extends IAuthenticateService {
         final reference = storage.ref().child("user_image/${model.name}.jpg");
         await reference.putFile(userImage);
         imageUrl = await reference.getDownloadURL();
-        
       }
 
       await firestore.collection("users").doc(userId).set(
@@ -94,6 +95,21 @@ class AuthenticateService extends IAuthenticateService {
       } else {
         return null;
       }
+    } on FirebaseException catch (e) {
+      throw CustomException(errorMessage: e.message.toString());
+    }
+  }
+
+  @override
+  Future<void> savedJob(JobModel model) async {
+    try {
+      final userId = auth.currentUser!.uid;
+
+      await firestore
+          .collection("users")
+          .doc(userId)
+          .collection("SavedJobs")
+          .add(model.toJson());
     } on FirebaseException catch (e) {
       throw CustomException(errorMessage: e.message.toString());
     }

@@ -6,6 +6,11 @@ class RoutesNames {
   final String _onBoard = "/onBoard";
   final String _search = "/search";
   final String _detail = "/detail";
+  final String _apply = "/apply";
+
+  String get apply {
+    return _apply;
+  }
 
   String get jobDetail {
     return _detail;

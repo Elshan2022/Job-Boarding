@@ -1,32 +1,27 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:uuid/uuid.dart';
+part 'job_model.g.dart';
+part 'job_model.freezed.dart';
 
-class JobModel {
-  final String jobLogo;
-  final String jobTitle;
-  final String jobSubtitle;
-  final String postedDuration;
-  final String jobLocation;
-  final String experience;
-  final String jobTime;
-  final String salary;
-  final String description;
-  final String id;
-  final List<String> skills;
-  final String role;
-  JobModel({
-    required this.role,
-    required this.skills,
-    required this.id,
-    required this.jobLogo,
-    required this.jobTitle,
-    required this.jobSubtitle,
-    required this.postedDuration,
-    required this.jobLocation,
-    required this.experience,
-    required this.jobTime,
-    required this.salary,
-    required this.description,
-  });
+@freezed
+class JobModel with _$JobModel {
+  const factory JobModel({
+    required String jobLogo,
+    required String jobTitle,
+    required String jobSubtitle,
+    required String postedDuration,
+    required String jobLocation,
+    required String experience,
+    required String jobTime,
+    required String salary,
+    required String description,
+    required String id,
+    required List<String> skills,
+    required String role,
+  }) = _JobModel;
+
+  factory JobModel.fromJson(Map<String, dynamic> json) =>
+      _$JobModelFromJson(json);
 
   static List<JobModel> jobList = [
     JobModel(
