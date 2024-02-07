@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_job_boarding/components/app_colors.dart';
 import 'package:flutter_job_boarding/components/helper_methods.dart';
+import 'package:flutter_job_boarding/model/job_model.dart';
 import 'package:flutter_job_boarding/providers/selected_index.dart';
 import 'package:flutter_job_boarding/viewModel/job_detail_view_model.dart';
 import 'package:flutter_job_boarding/widgets/job_description_field.dart';

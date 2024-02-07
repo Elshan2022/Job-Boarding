@@ -53,3 +53,39 @@ class CategorieWidget extends ConsumerWidget {
     );
   }
 }
+
+
+/* Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: _categories.asMap().entries.map((entry) {
+          final index = entry.key;
+          final category = entry.value;
+          return InkWell(
+            onTap: () {
+              ref.read(selectedCategoryProvider.notifier).selectCategory(index);
+            },
+            child: Container(
+              width: 89.w,
+              height: 43.h,
+              margin: EdgeInsets.only(right: 10.w),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25.w),
+                color: selectedIndex == index
+                    ? AppColors.primaryBlue
+                    : AppColors.darkGrey,
+              ),
+              child: Center(
+                child: Text(
+                  category,
+                  style: AppText.textBold(
+                    size: 14,
+                    textColor: selectedIndex == index
+                        ? Colors.white
+                        : AppColors.primaryColor,
+                  ),
+                ),
+              ),
+            ),
+          );
+        }).toList(),
+      ) */

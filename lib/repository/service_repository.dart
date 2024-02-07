@@ -14,7 +14,7 @@ class ServiceRepository {
   );
 
   Future<void> saveJob(JobModel model) async {
-    await service.savedJob(model);
+    await service.saveJob(model);
   }
 
   Future<void> signUp(SignUpModel model, WidgetRef ref) async {
@@ -32,5 +32,10 @@ class ServiceRepository {
   Future<Map<String, dynamic>?> getUserData() async {
     final data = await service.getUserData();
     return data;
+  }
+
+  Future<List<JobModel>> getSavedJobs() async {
+    final savedJobs = await service.getSavedJobs();
+    return savedJobs;
   }
 }

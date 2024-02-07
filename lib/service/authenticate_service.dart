@@ -12,7 +12,8 @@ abstract class IAuthenticateService {
   Future<void> signUp(SignUpModel model, WidgetRef ref);
   Future<void> signOut();
   Future<Map<String, dynamic>?> getUserData();
-  Future<void> savedJob(JobModel model);
+  Future<void> saveJob(JobModel model);
+  Future<List<JobModel>> getSavedJobs();
 
   final FirebaseAuth auth;
   final FirebaseFirestore firestore;
@@ -101,7 +102,7 @@ class AuthenticateService extends IAuthenticateService {
   }
 
   @override
-  Future<void> savedJob(JobModel model) async {
+  Future<void> saveJob(JobModel model) async {
     try {
       final userId = auth.currentUser!.uid;
 
@@ -110,6 +111,22 @@ class AuthenticateService extends IAuthenticateService {
           .doc(userId)
           .collection("SavedJobs")
           .add(model.toJson());
+    } on FirebaseException catch (e) {
+      throw CustomException(errorMessage: e.message.toString());
+    }
+  }
+
+  @override
+  Future<List<JobModel>> getSavedJobs() async {
+    try {
+      final userId = auth.currentUser!.uid;
+      final QuerySnapshot<Map<String, dynamic>> snapshot = await firestore
+          .collection("users")
+          .doc(userId)
+          .collection("SavedJobs")
+          .get();
+
+      return snapshot.docs.map((e) => JobModel.fromJson(e.data())).toList();
     } on FirebaseException catch (e) {
       throw CustomException(errorMessage: e.message.toString());
     }

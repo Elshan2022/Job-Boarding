@@ -7,14 +7,16 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class JobsListView extends StatefulWidget {
-  const JobsListView({super.key});
+  const JobsListView({super.key, required this.jobs});
+  final List<JobModel> jobs;
 
   @override
   State<JobsListView> createState() => _JobsListViewState();
 }
 
 class _JobsListViewState extends JobListViewModel {
-  final jobs = JobModel.jobList;
+  /* final jobs = JobModel.jobList; */
+
   @override
   Widget build(BuildContext context) {
     return FadeTransition(
@@ -22,7 +24,7 @@ class _JobsListViewState extends JobListViewModel {
       child: Consumer(
         builder: (context, ref, child) {
           return ListView.builder(
-            itemCount: jobs.length,
+            itemCount: widget.jobs.length,
             shrinkWrap: true,
             padding: EdgeInsets.zero,
             physics: const NeverScrollableScrollPhysics(),
@@ -33,8 +35,8 @@ class _JobsListViewState extends JobListViewModel {
                 decoration: _decoration(),
                 child: Column(
                   children: [
-                    JobReview(jobList: jobs, index: index),
-                    JobSalaryDuration(jobList: jobs, index: index),
+                    JobReview(jobList: widget.jobs, index: index),
+                    JobSalaryDuration(jobList: widget.jobs, index: index),
                   ],
                 ),
               );
