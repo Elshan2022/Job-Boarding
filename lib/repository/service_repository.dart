@@ -29,13 +29,13 @@ class ServiceRepository {
     await service.signOut();
   }
 
-  Future<Map<String, dynamic>?> getUserData() async {
-    final data = await service.getUserData();
+  Future<Map<String, dynamic>?> getUserData() {
+    final data = service.getUserData();
     return data;
   }
 
-  Future<List<JobModel>> getSavedJobs() async {
-    final savedJobs = await service.getSavedJobs();
+  Stream<List<JobModel>>? getSavedJobs() {
+    final savedJobs = service.getSavedJobs();
     return savedJobs;
   }
 }

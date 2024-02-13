@@ -15,8 +15,6 @@ class JobsListView extends StatefulWidget {
 }
 
 class _JobsListViewState extends JobListViewModel {
-  /* final jobs = JobModel.jobList; */
-
   @override
   Widget build(BuildContext context) {
     return FadeTransition(

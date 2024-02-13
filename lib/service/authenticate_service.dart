@@ -13,7 +13,7 @@ abstract class IAuthenticateService {
   Future<void> signOut();
   Future<Map<String, dynamic>?> getUserData();
   Future<void> saveJob(JobModel model);
-  Future<List<JobModel>> getSavedJobs();
+  Stream<List<JobModel>>? getSavedJobs();
 
   final FirebaseAuth auth;
   final FirebaseFirestore firestore;
@@ -117,18 +117,18 @@ class AuthenticateService extends IAuthenticateService {
   }
 
   @override
-  Future<List<JobModel>> getSavedJobs() async {
-    try {
-      final userId = auth.currentUser!.uid;
-      final QuerySnapshot<Map<String, dynamic>> snapshot = await firestore
-          .collection("users")
-          .doc(userId)
-          .collection("SavedJobs")
-          .get();
+  Stream<List<JobModel>>? getSavedJobs() {
+    final userId = auth.currentUser!.uid;
+    final snapshot = firestore
+        .collection("users")
+        .doc(userId)
+        .collection("SavedJobs")
+        .snapshots();
 
-      return snapshot.docs.map((e) => JobModel.fromJson(e.data())).toList();
-    } on FirebaseException catch (e) {
-      throw CustomException(errorMessage: e.message.toString());
-    }
+    final savedJobs = snapshot.map(
+      (event) => event.docs.map((e) => JobModel.fromJson(e.data())).toList(),
+    );
+
+    return savedJobs;
   }
 }

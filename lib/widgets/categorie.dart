@@ -5,8 +5,8 @@ import 'package:flutter_job_boarding/providers/categorie_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CategorieWidget extends ConsumerWidget {
-  CategorieWidget({super.key});
+class CategoryWidget extends ConsumerWidget {
+  CategoryWidget({super.key});
   final List<String> _categories = ["Discover", "Saved", "Applied", "Discart"];
 
   @override

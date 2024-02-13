@@ -6,8 +6,8 @@ import 'package:flutter_job_boarding/model/job_model.dart';
 import 'package:flutter_job_boarding/widgets/job_details_title_component.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class JobDescriptionFeild extends StatelessWidget {
-  JobDescriptionFeild({super.key, required this.index});
+class JobDescriptionField extends StatelessWidget {
+  JobDescriptionField({super.key, required this.index});
 
   final int index;
   final List<JobModel> _jobs = JobModel.jobList;

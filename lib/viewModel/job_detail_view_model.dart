@@ -80,7 +80,7 @@ abstract class JobDetailViewModel extends State<JobDetailPage> {
                   HelperMethods.showSnackBar(
                     context,
                     "You saved job succesfuly",
-                    AppColors.primaryGreen,
+                    AppColors.primaryBlue,
                   );
                 } catch (e) {
                   if (!context.mounted) return;

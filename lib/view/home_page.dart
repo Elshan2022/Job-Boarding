@@ -42,7 +42,7 @@ class _HomePageState extends HomeViewModel {
                       userName: snapshot.data!["name"],
                     ),
                     _title(),
-                    CategorieWidget(),
+                    CategoryWidget(),
                     SearchTextField(),
                     Consumer(
                       builder: (context, ref, child) {

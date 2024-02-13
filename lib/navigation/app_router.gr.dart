@@ -55,13 +55,13 @@ abstract class $AppRouter extends _i8.RootStackRouter {
         child: _i5.OnBoard(key: args.key),
       );
     },
-    SignupRoute.name: (routeData) {
+    SignUpRoute.name: (routeData) {
       return _i8.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i6.SignupPage(),
       );
     },
-    SpashRoute.name: (routeData) {
+    SplashRoute.name: (routeData) {
       return _i8.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i7.SpashPage(),
@@ -156,10 +156,10 @@ class OnBoardArgs {
 
 /// generated route for
 /// [_i6.SignupPage]
-class SignupRoute extends _i8.PageRouteInfo<void> {
-  const SignupRoute({List<_i8.PageRouteInfo>? children})
+class SignUpRoute extends _i8.PageRouteInfo<void> {
+  const SignUpRoute({List<_i8.PageRouteInfo>? children})
       : super(
-          SignupRoute.name,
+          SignUpRoute.name,
           initialChildren: children,
         );
 
@@ -170,10 +170,10 @@ class SignupRoute extends _i8.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i7.SpashPage]
-class SpashRoute extends _i8.PageRouteInfo<void> {
-  const SpashRoute({List<_i8.PageRouteInfo>? children})
+class SplashRoute extends _i8.PageRouteInfo<void> {
+  const SplashRoute({List<_i8.PageRouteInfo>? children})
       : super(
-          SpashRoute.name,
+          SplashRoute.name,
           initialChildren: children,
         );
 
