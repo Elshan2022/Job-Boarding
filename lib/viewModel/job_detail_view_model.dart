@@ -79,7 +79,7 @@ abstract class JobDetailViewModel extends State<JobDetailPage> {
                   if (!context.mounted) return;
                   HelperMethods.showSnackBar(
                     context,
-                    "You saved job succesfuly",
+                    "You saved job successfully",
                     AppColors.primaryBlue,
                   );
                 } catch (e) {
@@ -100,7 +100,7 @@ abstract class JobDetailViewModel extends State<JobDetailPage> {
               child: Text(
                 "Save",
                 style: AppText.textBold(
-                  size: 16,
+                  fontSize: 16,
                   textColor: AppColors.primaryColor,
                 ),
               ),
@@ -129,7 +129,7 @@ abstract class JobDetailViewModel extends State<JobDetailPage> {
           ),
           child: Text(
             "Apply now",
-            style: AppText.textBold(size: 16),
+            style: AppText.textBold(fontSize: 16),
           ),
         ),
       ),

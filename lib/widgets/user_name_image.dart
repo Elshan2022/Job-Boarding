@@ -16,7 +16,7 @@ class UserNameImage extends StatelessWidget {
         Text(
           "Hello $userName  👋 ",
           style: AppText.textBold(
-            size: 20,
+            fontSize: 20,
             textColor: Colors.white,
           ),
         ),

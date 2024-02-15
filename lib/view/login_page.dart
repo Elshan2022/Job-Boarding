@@ -53,7 +53,7 @@ class _LoginPageState extends LoginViewModel {
             "Do you have any account ?",
             style: AppText.textBold(
               decoration: TextDecoration.underline,
-              size: 16,
+              fontSize: 16,
               textColor: Colors.white,
             ),
           ),
@@ -78,7 +78,7 @@ class _LoginPageState extends LoginViewModel {
           child: Center(
             child: Text(
               "Good Job!",
-              style: AppText.textBold(size: 25),
+              style: AppText.textBold(fontSize: 25),
             ),
           ),
         ),

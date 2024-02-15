@@ -39,7 +39,7 @@ class CategoryWidget extends ConsumerWidget {
                 child: Text(
                   category,
                   style: AppText.textBold(
-                    size: 14,
+                    fontSize: 14,
                     textColor: selectedIndex == index
                         ? Colors.white
                         : AppColors.primaryColor,

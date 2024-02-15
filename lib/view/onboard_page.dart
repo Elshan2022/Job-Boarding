@@ -11,11 +11,8 @@ class OnBoard extends StatelessWidget {
   OnBoard({super.key});
   final RoutesNames _routesNames = RoutesNames();
 
-
   @override
   Widget build(BuildContext context) {
-    
-
     return Scaffold(
       backgroundColor: AppColors.primaryColor,
       body: Column(
@@ -68,7 +65,7 @@ class OnBoard extends StatelessWidget {
       child: Text(
         "You search for the next dream job is over",
         textAlign: TextAlign.center,
-        style: AppText.textBold(size: 40, textColor: Colors.white),
+        style: AppText.textBold(fontSize: 40, textColor: Colors.white),
       ),
     );
   }

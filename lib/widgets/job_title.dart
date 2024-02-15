@@ -90,7 +90,7 @@ class JobTitle extends ConsumerWidget {
     return Text(
       jobs[index].jobTitle,
       style: AppText.textBold(
-        size: 14,
+        fontSize: 14,
       ),
     );
   }

@@ -9,9 +9,6 @@ import 'package:flutter_job_boarding/widgets/salary_duration.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
-
-
 @RoutePage()
 class JobSearchPage extends ConsumerStatefulWidget {
   const JobSearchPage({super.key});
@@ -35,7 +32,7 @@ class _JobSearchPageState extends ConsumerState<JobSearchPage> {
         centerTitle: true,
         title: Text(
           "Find your job",
-          style: AppText.textBold(size: 20),
+          style: AppText.textBold(fontSize: 20),
         ),
       ),
       body: SingleChildScrollView(

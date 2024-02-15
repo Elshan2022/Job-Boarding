@@ -65,7 +65,7 @@ class JobReview extends ConsumerWidget {
                     ),
                     TextSpan(
                       text: isExpand.state ? "...Read Less" : "...Read More",
-                      style: AppText.textBold(size: 14),
+                      style: AppText.textBold(fontSize: 14),
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
                           ref

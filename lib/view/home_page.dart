@@ -51,7 +51,7 @@ class _HomePageState extends HomeViewModel {
                           index: index,
                           children: [
                             JobsListView(jobs: jobs),
-                            const SavedJobsWidget(),
+                            SavedJobsWidget(),
                             const SizedBox(
                               child: Text(
                                 "Applied",
@@ -87,7 +87,7 @@ class _HomePageState extends HomeViewModel {
         "Find Jobs",
         style: AppText.textBold(
           textColor: Colors.white,
-          size: 32,
+          fontSize: 32,
         ),
       ),
     );

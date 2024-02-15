@@ -39,7 +39,7 @@ class JobDetailTitleComponent extends StatelessWidget {
           ),
           Text(
             title,
-            style: AppText.textBold(size: 18),
+            style: AppText.textBold(fontSize: 18),
           ),
         ],
       ),

@@ -44,7 +44,7 @@ class _LoginButtonState extends ConsumerState<LoginButton> {
         style: AppDecorations.buttonStyle,
         child: Text(
           _isLoading ? "Please wait..." : "Login",
-          style: AppText.textBold(size: 20),
+          style: AppText.textBold(fontSize: 20),
         ),
       ),
     );

@@ -117,7 +117,7 @@ class _SignupPageState extends SignUpViewModel {
         style: AppDecorations.buttonStyle,
         child: Text(
           isLoading ? "Please wait..." : "Sign up",
-          style: AppText.textBold(size: 20),
+          style: AppText.textBold(fontSize: 20),
         ),
       ),
     );

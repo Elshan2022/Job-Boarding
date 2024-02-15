@@ -59,7 +59,7 @@ class JobDetailContainer extends StatelessWidget {
                   title: Text(
                     _jobs[index].jobTitle,
                     style: AppText.textBold(
-                      size: 14,
+                      fontSize: 14,
                       textColor: AppColors.primaryColor,
                     ),
                   ),
@@ -117,7 +117,7 @@ class JobDetailContainer extends StatelessWidget {
                 Text(
                   "\$${_jobs[index].salary} K/M",
                   style: AppText.textBold(
-                    size: 18,
+                    fontSize: 18,
                     textColor: AppColors.primaryColor,
                   ),
                 ),

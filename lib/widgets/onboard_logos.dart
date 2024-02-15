@@ -43,7 +43,7 @@ class OnBoardLogos extends StatelessWidget {
             Text(
               text,
               style: AppText.textBold(
-                size: 20.61.w,
+                fontSize: 20.61.w,
                 textColor: Colors.white,
               ),
             ),

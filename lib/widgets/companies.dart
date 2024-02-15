@@ -350,7 +350,7 @@ class Companies extends StatelessWidget {
               Text(
                 "J.P. Morgan",
                 style: AppText.textBold(
-                  size: 12.83.w,
+                  fontSize: 12.83.w,
                   textColor: Colors.white,
                 ),
               ),
@@ -438,7 +438,7 @@ class Companies extends StatelessWidget {
               Text(
                 "Microsoft",
                 style: AppText.textBold(
-                  size: 12.08.w,
+                  fontSize: 12.08.w,
                   textColor: Colors.white,
                 ),
               ),

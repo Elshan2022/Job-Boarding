@@ -31,7 +31,7 @@ class JobDetailHeader extends StatelessWidget {
               ),
               Text(
                 "Job Detail",
-                style: AppText.textBold(size: 18),
+                style: AppText.textBold(fontSize: 18),
               ),
             ],
           ),

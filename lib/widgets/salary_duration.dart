@@ -10,7 +10,7 @@ class JobSalaryDuration extends ConsumerWidget {
 
   final int index;
   final Radius radius = Radius.circular(15.w);
-  final List<JobModel> jobList ;
+  final List<JobModel> jobList;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -36,7 +36,7 @@ class JobSalaryDuration extends ConsumerWidget {
           Text(
             "\$${jobList[index].salary} K/M",
             style: AppText.textBold(
-              size: 18,
+              fontSize: 18,
               textColor: AppColors.primaryColor,
             ),
           ),
