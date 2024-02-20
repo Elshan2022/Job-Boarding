@@ -6,14 +6,14 @@ import 'package:flutter_job_boarding/components/app_colors.dart';
 import 'package:flutter_job_boarding/navigation/routes_name.dart';
 
 @RoutePage()
-class SpashPage extends StatefulWidget {
-  const SpashPage({super.key});
+class SplashPage extends StatefulWidget {
+  const SplashPage({super.key});
 
   @override
-  State<SpashPage> createState() => _SpashPageState();
+  State<SplashPage> createState() => _SplashPageState();
 }
 
-class _SpashPageState extends State<SpashPage> {
+class _SplashPageState extends State<SplashPage> {
   final RoutesNames routesNames = RoutesNames();
   final FirebaseAuth _auth = FirebaseAuth.instance;
   late StreamSubscription<User?> _authStateSubscription;
@@ -25,7 +25,7 @@ class _SpashPageState extends State<SpashPage> {
       if (event == null) {
         AutoRouter.of(context).replaceNamed(routesNames.onBoard);
       } else {
-        AutoRouter.of(context).replaceNamed(routesNames.homePage);
+        AutoRouter.of(context).replaceNamed(routesNames.main);
       }
     });
   }

@@ -8,7 +8,7 @@ import 'package:flutter_job_boarding/providers/surname_provider.dart';
 import 'package:flutter_job_boarding/providers/user_image_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final avtiveSignUpButtonProvider = StateProvider.autoDispose<bool>((ref) {
+final activeSignUpButtonProvider = StateProvider.autoDispose<bool>((ref) {
   bool isNameValidate = ref.watch(isValidNameProvider.notifier).state;
   bool isSurnameValidate = ref.watch(isValidSurnameProvider.notifier).state;
   bool isEmailValidate = ref.watch(isValidSignUpEmailProvider.notifier).state;
@@ -22,7 +22,7 @@ final avtiveSignUpButtonProvider = StateProvider.autoDispose<bool>((ref) {
       isEmailValidate &&
       isPasswordValidate &&
       isPhoneValidate &&
-      hasImage !=  null) {
+      hasImage != null) {
     return true;
   } else {
     return false;

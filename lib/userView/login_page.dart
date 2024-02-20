@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_job_boarding/components/app_colors.dart';
 import 'package:flutter_job_boarding/components/app_text.dart';
 import 'package:flutter_job_boarding/viewModel/login_view_model.dart';
-import 'package:flutter_job_boarding/widgets/email_textForm_field.dart';
-import 'package:flutter_job_boarding/widgets/login_button.dart';
-import 'package:flutter_job_boarding/widgets/pasword_textForm_field.dart';
+import 'package:flutter_job_boarding/userWidgets/email_textForm_field.dart';
+import 'package:flutter_job_boarding/userWidgets/login_button.dart';
+import 'package:flutter_job_boarding/userWidgets/pasword_textForm_field.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 @RoutePage()

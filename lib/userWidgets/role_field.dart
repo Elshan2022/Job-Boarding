@@ -3,7 +3,7 @@ import 'package:flutter_job_boarding/components/app_colors.dart';
 import 'package:flutter_job_boarding/components/app_text.dart';
 import 'package:flutter_job_boarding/gen/assets.gen.dart';
 import 'package:flutter_job_boarding/model/job_model.dart';
-import 'package:flutter_job_boarding/widgets/job_details_title_component.dart';
+import 'package:flutter_job_boarding/userWidgets/job_details_title_component.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class RoleField extends StatelessWidget {

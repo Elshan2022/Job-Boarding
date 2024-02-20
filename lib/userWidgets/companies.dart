@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_job_boarding/components/app_colors.dart';
 import 'package:flutter_job_boarding/components/app_text.dart';
 import 'package:flutter_job_boarding/gen/assets.gen.dart';
-import 'package:flutter_job_boarding/widgets/onboard_logos.dart';
+import 'package:flutter_job_boarding/userWidgets/onboard_logos.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Companies extends StatelessWidget {

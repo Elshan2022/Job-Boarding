@@ -7,7 +7,7 @@ import 'package:flutter_job_boarding/model/job_model.dart';
 import 'package:flutter_job_boarding/navigation/routes_name.dart';
 import 'package:flutter_job_boarding/providers/selected_index.dart';
 import 'package:flutter_job_boarding/repository/service_repository.dart';
-import 'package:flutter_job_boarding/view/job_detail_page.dart';
+import 'package:flutter_job_boarding/userView/job_detail_page.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_job_boarding/components/app_colors.dart';
+import 'package:flutter_job_boarding/components/app_text.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppDecorations {
@@ -18,6 +19,28 @@ class AppDecorations {
           borderRadius: BorderRadius.circular(15.w),
         ),
       ),
+    );
+  }
+
+  static InputBorder get textFieldBorder {
+    return OutlineInputBorder(
+      borderRadius: BorderRadius.circular(10.w),
+      borderSide: const BorderSide(color: Colors.white),
+    );
+  }
+
+  static InputBorder get textFieldErrorBorder {
+    return OutlineInputBorder(
+      borderRadius: BorderRadius.circular(10.w),
+      borderSide: const BorderSide(color: AppColors.colorRed),
+    );
+  }
+
+  static TextStyle get textFieldTextStyle {
+    return AppText.textMedium(
+      size: 16,
+      textColor: Colors.white,
+      decoration: TextDecoration.none,
     );
   }
 }

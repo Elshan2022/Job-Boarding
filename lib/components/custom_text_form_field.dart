@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_job_boarding/components/app_colors.dart';
 import 'package:flutter_job_boarding/components/app_text.dart';
+import 'package:flutter_job_boarding/components/decoration.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextFormField extends StatelessWidget {
@@ -29,28 +29,15 @@ class CustomTextFormField extends StatelessWidget {
         keyboardType: textInputType,
         controller: controller,
         autovalidateMode: AutovalidateMode.onUserInteraction,
-        style: AppText.textMedium(
-            size: 16, textColor: Colors.white, decoration: TextDecoration.none),
+        style: AppDecorations.textFieldTextStyle,
         decoration: InputDecoration(
           errorText: errorMessage,
           hintStyle: AppText.textMedium(size: 16),
           hintText: hintText,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10.w),
-            borderSide: const BorderSide(color: Colors.white),
-          ),
-          errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10.w),
-            borderSide: const BorderSide(color: AppColors.colorRed),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10.w),
-            borderSide: const BorderSide(color: Colors.white),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10.w),
-            borderSide: const BorderSide(color: Colors.white),
-          ),
+          border: AppDecorations.textFieldBorder,
+          errorBorder: AppDecorations.textFieldErrorBorder,
+          focusedBorder: AppDecorations.textFieldBorder,
+          enabledBorder: AppDecorations.textFieldBorder,
         ),
         onChanged: onChange,
       ),

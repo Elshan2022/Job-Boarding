@@ -5,8 +5,8 @@ import 'package:flutter_job_boarding/components/app_text.dart';
 import 'package:flutter_job_boarding/gen/assets.gen.dart';
 import 'package:flutter_job_boarding/model/job_model.dart';
 import 'package:flutter_job_boarding/providers/read_more_provider.dart';
-import 'package:flutter_job_boarding/widgets/custom_chip.dart';
-import 'package:flutter_job_boarding/widgets/job_title.dart';
+import 'package:flutter_job_boarding/userWidgets/custom_chip.dart';
+import 'package:flutter_job_boarding/userWidgets/job_title.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

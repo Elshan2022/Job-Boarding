@@ -32,6 +32,8 @@ mixin _$JobModel {
   String get id => throw _privateConstructorUsedError;
   List<String> get skills => throw _privateConstructorUsedError;
   String get role => throw _privateConstructorUsedError;
+  bool get isApplied => throw _privateConstructorUsedError;
+  bool get isDiscard => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -56,7 +58,9 @@ abstract class $JobModelCopyWith<$Res> {
       String description,
       String id,
       List<String> skills,
-      String role});
+      String role,
+      bool isApplied,
+      bool isDiscard});
 }
 
 /// @nodoc
@@ -84,6 +88,8 @@ class _$JobModelCopyWithImpl<$Res, $Val extends JobModel>
     Object? id = null,
     Object? skills = null,
     Object? role = null,
+    Object? isApplied = null,
+    Object? isDiscard = null,
   }) {
     return _then(_value.copyWith(
       jobLogo: null == jobLogo
@@ -134,6 +140,14 @@ class _$JobModelCopyWithImpl<$Res, $Val extends JobModel>
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as String,
+      isApplied: null == isApplied
+          ? _value.isApplied
+          : isApplied // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isDiscard: null == isDiscard
+          ? _value.isDiscard
+          : isDiscard // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -158,7 +172,9 @@ abstract class _$$JobModelImplCopyWith<$Res>
       String description,
       String id,
       List<String> skills,
-      String role});
+      String role,
+      bool isApplied,
+      bool isDiscard});
 }
 
 /// @nodoc
@@ -184,6 +200,8 @@ class __$$JobModelImplCopyWithImpl<$Res>
     Object? id = null,
     Object? skills = null,
     Object? role = null,
+    Object? isApplied = null,
+    Object? isDiscard = null,
   }) {
     return _then(_$JobModelImpl(
       jobLogo: null == jobLogo
@@ -234,6 +252,14 @@ class __$$JobModelImplCopyWithImpl<$Res>
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as String,
+      isApplied: null == isApplied
+          ? _value.isApplied
+          : isApplied // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isDiscard: null == isDiscard
+          ? _value.isDiscard
+          : isDiscard // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -253,7 +279,9 @@ class _$JobModelImpl implements _JobModel {
       required this.description,
       required this.id,
       required final List<String> skills,
-      required this.role})
+      required this.role,
+      this.isApplied = false,
+      this.isDiscard = false})
       : _skills = skills;
 
   factory _$JobModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -289,10 +317,16 @@ class _$JobModelImpl implements _JobModel {
 
   @override
   final String role;
+  @override
+  @JsonKey()
+  final bool isApplied;
+  @override
+  @JsonKey()
+  final bool isDiscard;
 
   @override
   String toString() {
-    return 'JobModel(jobLogo: $jobLogo, jobTitle: $jobTitle, jobSubtitle: $jobSubtitle, postedDuration: $postedDuration, jobLocation: $jobLocation, experience: $experience, jobTime: $jobTime, salary: $salary, description: $description, id: $id, skills: $skills, role: $role)';
+    return 'JobModel(jobLogo: $jobLogo, jobTitle: $jobTitle, jobSubtitle: $jobSubtitle, postedDuration: $postedDuration, jobLocation: $jobLocation, experience: $experience, jobTime: $jobTime, salary: $salary, description: $description, id: $id, skills: $skills, role: $role, isApplied: $isApplied, isDiscard: $isDiscard)';
   }
 
   @override
@@ -317,7 +351,11 @@ class _$JobModelImpl implements _JobModel {
                 other.description == description) &&
             (identical(other.id, id) || other.id == id) &&
             const DeepCollectionEquality().equals(other._skills, _skills) &&
-            (identical(other.role, role) || other.role == role));
+            (identical(other.role, role) || other.role == role) &&
+            (identical(other.isApplied, isApplied) ||
+                other.isApplied == isApplied) &&
+            (identical(other.isDiscard, isDiscard) ||
+                other.isDiscard == isDiscard));
   }
 
   @JsonKey(ignore: true)
@@ -335,7 +373,9 @@ class _$JobModelImpl implements _JobModel {
       description,
       id,
       const DeepCollectionEquality().hash(_skills),
-      role);
+      role,
+      isApplied,
+      isDiscard);
 
   @JsonKey(ignore: true)
   @override
@@ -364,7 +404,9 @@ abstract class _JobModel implements JobModel {
       required final String description,
       required final String id,
       required final List<String> skills,
-      required final String role}) = _$JobModelImpl;
+      required final String role,
+      final bool isApplied,
+      final bool isDiscard}) = _$JobModelImpl;
 
   factory _JobModel.fromJson(Map<String, dynamic> json) =
       _$JobModelImpl.fromJson;
@@ -393,6 +435,10 @@ abstract class _JobModel implements JobModel {
   List<String> get skills;
   @override
   String get role;
+  @override
+  bool get isApplied;
+  @override
+  bool get isDiscard;
   @override
   @JsonKey(ignore: true)
   _$$JobModelImplCopyWith<_$JobModelImpl> get copyWith =>

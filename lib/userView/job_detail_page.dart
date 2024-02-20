@@ -4,11 +4,11 @@ import 'package:flutter_job_boarding/components/app_colors.dart';
 import 'package:flutter_job_boarding/components/helper_methods.dart';
 import 'package:flutter_job_boarding/providers/selected_index.dart';
 import 'package:flutter_job_boarding/viewModel/job_detail_view_model.dart';
-import 'package:flutter_job_boarding/widgets/job_description_field.dart';
-import 'package:flutter_job_boarding/widgets/job_detail_container.dart';
-import 'package:flutter_job_boarding/widgets/job_detail_header.dart';
-import 'package:flutter_job_boarding/widgets/role_field.dart';
-import 'package:flutter_job_boarding/widgets/skills_and_requirment.dart';
+import 'package:flutter_job_boarding/userWidgets/job_description_field.dart';
+import 'package:flutter_job_boarding/userWidgets/job_detail_container.dart';
+import 'package:flutter_job_boarding/userWidgets/job_detail_header.dart';
+import 'package:flutter_job_boarding/userWidgets/role_field.dart';
+import 'package:flutter_job_boarding/userWidgets/skills_and_requirment.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

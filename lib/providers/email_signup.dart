@@ -20,11 +20,11 @@ class SignUpEmailNotifier extends Notifier<String?> {
   }
 }
 
-final signUpemailNotifierProvider =
+final signEmailNotifierProvider =
     NotifierProvider<SignUpEmailNotifier, String?>(SignUpEmailNotifier.new);
 
 final isValidSignUpEmailProvider = StateProvider<bool>((ref) {
-  final isValid = ref.watch(signUpemailNotifierProvider);
+  final isValid = ref.watch(signEmailNotifierProvider);
 
   if (isValid == null) {
     return true;

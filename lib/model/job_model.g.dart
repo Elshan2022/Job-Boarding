@@ -21,6 +21,8 @@ _$JobModelImpl _$$JobModelImplFromJson(Map<String, dynamic> json) =>
       skills:
           (json['skills'] as List<dynamic>).map((e) => e as String).toList(),
       role: json['role'] as String,
+      isApplied: json['isApplied'] as bool? ?? false,
+      isDiscard: json['isDiscard'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$JobModelImplToJson(_$JobModelImpl instance) =>
@@ -37,4 +39,6 @@ Map<String, dynamic> _$$JobModelImplToJson(_$JobModelImpl instance) =>
       'id': instance.id,
       'skills': instance.skills,
       'role': instance.role,
+      'isApplied': instance.isApplied,
+      'isDiscard': instance.isDiscard,
     };

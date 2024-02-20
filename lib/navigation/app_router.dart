@@ -7,13 +7,14 @@ class AppRouter extends $AppRouter {
   final routesNames = RoutesNames();
   @override
   List<AutoRoute> get routes => [
+        AutoRoute(
+            page: SplashRoute.page, path: routesNames.splash, initial: true),
         AutoRoute(page: OnBoard.page, path: routesNames.onBoard),
         AutoRoute(page: LoginRoute.page, path: routesNames.login),
         AutoRoute(page: SignUpRoute.page, path: routesNames.signUp),
         AutoRoute(page: HomeRoute.page, path: routesNames.homePage),
-        AutoRoute(
-            page: SplashRoute.page, path: routesNames.splash, initial: true),
         AutoRoute(page: JobSearchRoute.page, path: routesNames.search),
         AutoRoute(page: JobDetailRoute.page, path: routesNames.jobDetail),
+        AutoRoute(page: MainRoute.page, path: routesNames.main),
       ];
 }

@@ -2,7 +2,7 @@
 
 
 import 'package:flutter_job_boarding/components/regx.dart';
-import 'package:flutter_job_boarding/widgets/email_textForm_field.dart';
+import 'package:flutter_job_boarding/userWidgets/email_textForm_field.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 abstract class EmailTextFormFieldViewModel extends ConsumerState<EmailTextFormField> {

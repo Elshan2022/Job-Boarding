@@ -18,6 +18,8 @@ class JobModel with _$JobModel {
     required String id,
     required List<String> skills,
     required String role,
+    @Default(false) bool isApplied,
+    @Default(false) bool isDiscard,
   }) = _JobModel;
 
   factory JobModel.fromJson(Map<String, dynamic> json) =>

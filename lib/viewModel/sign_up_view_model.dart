@@ -7,11 +7,11 @@ import 'package:flutter_job_boarding/components/helper_methods.dart';
 import 'package:flutter_job_boarding/model/sign_up_model.dart';
 import 'package:flutter_job_boarding/navigation/routes_name.dart';
 import 'package:flutter_job_boarding/repository/service_repository.dart';
-import 'package:flutter_job_boarding/view/sign_up_page.dart';
+import 'package:flutter_job_boarding/userView/sign_up_page.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:uuid/uuid.dart';
 
-abstract class SignUpViewModel extends ConsumerState<SignupPage> {
+abstract class SignUpViewModel extends ConsumerState<SignUpPage> {
   bool isLoading = false;
   final RoutesNames _routesNames = RoutesNames();
   ServiceRepository serviceRepository = ServiceRepository();

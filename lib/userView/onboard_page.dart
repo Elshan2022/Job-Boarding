@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_job_boarding/components/app_colors.dart';
 import 'package:flutter_job_boarding/components/app_text.dart';
 import 'package:flutter_job_boarding/navigation/routes_name.dart';
-import 'package:flutter_job_boarding/widgets/companies.dart';
+import 'package:flutter_job_boarding/userWidgets/companies.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 @RoutePage()

@@ -5,11 +5,11 @@ import 'package:flutter_job_boarding/components/app_text.dart';
 import 'package:flutter_job_boarding/components/helper_methods.dart';
 import 'package:flutter_job_boarding/providers/categorie_provider.dart';
 import 'package:flutter_job_boarding/viewModel/home_view_model.dart';
-import 'package:flutter_job_boarding/widgets/categorie.dart';
-import 'package:flutter_job_boarding/widgets/jobs_list_view.dart';
-import 'package:flutter_job_boarding/widgets/saved_job_widget.dart';
-import 'package:flutter_job_boarding/widgets/search_job_text_field.dart';
-import 'package:flutter_job_boarding/widgets/user_name_image.dart';
+import 'package:flutter_job_boarding/userWidgets/categorie.dart';
+import 'package:flutter_job_boarding/userWidgets/jobs_list_view.dart';
+import 'package:flutter_job_boarding/userWidgets/saved_job_widget.dart';
+import 'package:flutter_job_boarding/userWidgets/search_job_text_field.dart';
+import 'package:flutter_job_boarding/userWidgets/user_name_image.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

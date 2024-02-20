@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_job_boarding/components/app_text.dart';
 import 'package:flutter_job_boarding/model/job_model.dart';
 import 'package:flutter_job_boarding/repository/service_repository.dart';
-import 'package:flutter_job_boarding/widgets/jobs_list_view.dart';
+import 'package:flutter_job_boarding/userWidgets/jobs_list_view.dart';
 
 class SavedJobsWidget extends StatelessWidget {
   SavedJobsWidget({super.key});

@@ -14,24 +14,24 @@ import 'package:flutter_job_boarding/providers/number_provider.dart';
 import 'package:flutter_job_boarding/providers/password_sign_up.dart';
 import 'package:flutter_job_boarding/providers/surname_provider.dart';
 import 'package:flutter_job_boarding/viewModel/sign_up_view_model.dart';
-import 'package:flutter_job_boarding/widgets/user_image.dart';
+import 'package:flutter_job_boarding/userWidgets/user_image.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 @RoutePage()
-class SignupPage extends ConsumerStatefulWidget {
-  const SignupPage({super.key});
+class SignUpPage extends ConsumerStatefulWidget {
+  const SignUpPage({super.key});
 
   @override
-  ConsumerState<SignupPage> createState() => _SignupPageState();
+  ConsumerState<SignUpPage> createState() => _SignUpPageState();
 }
 
-class _SignupPageState extends SignUpViewModel {
+class _SignUpPageState extends SignUpViewModel {
   @override
   Widget build(BuildContext context) {
     final nameError = ref.watch(nameProvider);
     final surnameError = ref.watch(surnameProvider);
-    final emailError = ref.watch(signUpemailNotifierProvider);
+    final emailError = ref.watch(signEmailNotifierProvider);
     final phoneError = ref.watch(phoneNumberProvider);
     final passwordError = ref.watch(passwordSignUpProvider);
 
@@ -72,7 +72,7 @@ class _SignupPageState extends SignUpViewModel {
                   errorMessage: emailError,
                   onChange: (email) {
                     ref
-                        .read(signUpemailNotifierProvider.notifier)
+                        .read(signEmailNotifierProvider.notifier)
                         .validateEmail(email);
                   },
                 ),
@@ -107,7 +107,7 @@ class _SignupPageState extends SignUpViewModel {
   }
 
   Container _signUpButton(WidgetRef ref) {
-    final isActive = ref.watch(avtiveSignUpButtonProvider.notifier).state;
+    final isActive = ref.watch(activeSignUpButtonProvider.notifier).state;
     return Container(
       height: 60.h,
       width: double.infinity,

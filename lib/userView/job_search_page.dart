@@ -4,8 +4,8 @@ import 'package:flutter_job_boarding/components/app_colors.dart';
 import 'package:flutter_job_boarding/components/app_text.dart';
 import 'package:flutter_job_boarding/model/job_model.dart';
 import 'package:flutter_job_boarding/providers/search_job_provider.dart';
-import 'package:flutter_job_boarding/widgets/job_reviews.dart';
-import 'package:flutter_job_boarding/widgets/salary_duration.dart';
+import 'package:flutter_job_boarding/userWidgets/job_reviews.dart';
+import 'package:flutter_job_boarding/userWidgets/salary_duration.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

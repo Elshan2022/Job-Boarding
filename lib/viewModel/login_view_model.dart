@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_job_boarding/navigation/routes_name.dart';
-import 'package:flutter_job_boarding/view/login_page.dart';
+import 'package:flutter_job_boarding/userView/login_page.dart';
 
 abstract class LoginViewModel extends State<LoginPage>
     with SingleTickerProviderStateMixin {

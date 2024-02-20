@@ -7,6 +7,11 @@ class RoutesNames {
   final String _search = "/search";
   final String _detail = "/detail";
   final String _apply = "/apply";
+  final String _main = "/main";
+
+  String get main {
+    return _main;
+  }
 
   String get apply {
     return _apply;
