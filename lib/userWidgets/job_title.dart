@@ -37,7 +37,7 @@ class JobTitle extends ConsumerWidget {
       ),
       label: Text(
         "View",
-        style: AppText.textMedium(size: 14),
+        style: AppText.textMedium(fontSize: 14),
       ),
       backgroundColor: AppColors.primaryColor.withOpacity(0.8),
       side: const BorderSide(color: Colors.white, width: 1),
@@ -81,7 +81,7 @@ class JobTitle extends ConsumerWidget {
     return Text(
       jobs[index].jobSubtitle,
       style: AppText.textMedium(
-        size: 12,
+        fontSize: 12,
       ),
     );
   }

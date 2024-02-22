@@ -11,7 +11,8 @@ class CustomPasswordTextFromField extends StatefulWidget {
     required this.isVisible,
     this.errorText = "",
     this.onChange,
-    required this.hintText, required this.controller,
+    required this.hintText,
+    required this.controller,
   });
 
   bool isVisible = false;
@@ -38,7 +39,9 @@ class _CustomPasswordTextFromFieldState
         cursorColor: Colors.white,
         obscureText: widget.isVisible,
         style: AppText.textMedium(
-            size: 16, textColor: Colors.white, decoration: TextDecoration.none),
+            fontSize: 16,
+            textColor: Colors.white,
+            decoration: TextDecoration.none),
         decoration: InputDecoration(
           suffixIcon: IconButton(
             onPressed: () {
@@ -56,7 +59,7 @@ class _CustomPasswordTextFromFieldState
             borderRadius: BorderRadius.circular(10.w),
             borderSide: const BorderSide(color: Colors.white),
           ),
-          hintStyle: AppText.textMedium(size: 16),
+          hintStyle: AppText.textMedium(fontSize: 16),
           errorText: widget.errorText,
           hintText: widget.hintText,
           errorBorder: OutlineInputBorder(

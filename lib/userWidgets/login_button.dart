@@ -71,7 +71,7 @@ class _LoginButtonState extends ConsumerState<LoginButton> {
         password,
       );
       if (context.mounted) {
-        AutoRouter.of(context).pushNamed(_routesNames.homePage);
+        AutoRouter.of(context).pushNamed(_routesNames.main);
       }
     } catch (e) {
       if (context.mounted) {

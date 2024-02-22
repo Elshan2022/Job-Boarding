@@ -39,7 +39,7 @@ class CustomChip extends StatelessWidget {
           Text(
             title,
             style: AppText.textMedium(
-              size: 13,
+              fontSize: 13,
               textColor: chipColor,
             ),
           ),

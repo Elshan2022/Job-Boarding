@@ -32,7 +32,7 @@ class CustomTextFormField extends StatelessWidget {
         style: AppDecorations.textFieldTextStyle,
         decoration: InputDecoration(
           errorText: errorMessage,
-          hintStyle: AppText.textMedium(size: 16),
+          hintStyle: AppText.textMedium(fontSize: 16),
           hintText: hintText,
           border: AppDecorations.textFieldBorder,
           errorBorder: AppDecorations.textFieldErrorBorder,

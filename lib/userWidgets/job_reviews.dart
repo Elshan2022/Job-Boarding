@@ -61,7 +61,7 @@ class JobReview extends ConsumerWidget {
                   children: [
                     TextSpan(
                       text: description,
-                      style: AppText.textMedium(size: 14),
+                      style: AppText.textMedium(fontSize: 14),
                     ),
                     TextSpan(
                       text: isExpand.state ? "...Read Less" : "...Read More",

@@ -61,7 +61,7 @@ class SkillsAndRequirements extends StatelessWidget {
         _jobs[index].skills[skillsIndex],
         maxLines: 2,
         overflow: TextOverflow.ellipsis,
-        style: AppText.textMedium(size: 16),
+        style: AppText.textMedium(fontSize: 16),
       ),
     );
   }

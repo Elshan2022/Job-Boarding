@@ -45,7 +45,7 @@ class OnBoard extends StatelessWidget {
             Text(
               "Start searching",
               style: AppText.textMedium(
-                size: 16,
+                fontSize: 16,
                 textColor: Colors.white,
               ),
             ),

@@ -34,7 +34,7 @@ class RoleField extends StatelessWidget {
           SizedBox(height: 10.h),
           Text(
             _jobs[index].role,
-            style: AppText.textMedium(size: 16),
+            style: AppText.textMedium(fontSize: 16),
           ),
         ],
       ),

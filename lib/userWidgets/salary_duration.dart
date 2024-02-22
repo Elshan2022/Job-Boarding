@@ -29,7 +29,7 @@ class JobSalaryDuration extends ConsumerWidget {
           Text(
             "Posted ${jobList[index].postedDuration} days ago",
             style: AppText.textMedium(
-              size: 14,
+              fontSize: 14,
               textColor: AppColors.primaryColor,
             ),
           ),

@@ -35,7 +35,7 @@ class JobDescriptionField extends StatelessWidget {
               padding: EdgeInsets.only(top: 8.w),
               child: Text(
                 _jobs[index].description,
-                style: AppText.textMedium(size: 16),
+                style: AppText.textMedium(fontSize: 16),
               ),
             )
           ],

@@ -62,7 +62,7 @@ class Companies extends StatelessWidget {
               Text(
                 "Amazon",
                 style: AppText.textMedium(
-                  size: 19.44.w,
+                  fontSize: 19.44.w,
                   textColor: Colors.white,
                 ),
               ),
@@ -98,7 +98,7 @@ class Companies extends StatelessWidget {
               Text(
                 "Netflix",
                 style: AppText.textMedium(
-                  size: 23.34.w,
+                  fontSize: 23.34.w,
                   textColor: Colors.white,
                 ),
               ),
@@ -134,7 +134,7 @@ class Companies extends StatelessWidget {
               Text(
                 "Spotify",
                 style: AppText.textMedium(
-                  size: 19.44.w,
+                  fontSize: 19.44.w,
                   textColor: Colors.white,
                 ),
               ),
@@ -170,7 +170,7 @@ class Companies extends StatelessWidget {
               Text(
                 "LinkedIn",
                 style: AppText.textMedium(
-                  size: 19.44.w,
+                  fontSize: 19.44.w,
                   textColor: Colors.white,
                 ),
               ),
@@ -206,7 +206,7 @@ class Companies extends StatelessWidget {
               Text(
                 "Bank of America",
                 style: AppText.textMedium(
-                  size: 19.44.w,
+                  fontSize: 19.44.w,
                   textColor: Colors.white,
                 ),
               ),
@@ -242,7 +242,7 @@ class Companies extends StatelessWidget {
               Text(
                 "Uber",
                 style: AppText.textMedium(
-                  size: 16.33.w,
+                  fontSize: 16.33.w,
                   textColor: Colors.white,
                 ),
               ),
@@ -278,7 +278,7 @@ class Companies extends StatelessWidget {
               Text(
                 "Swiggy",
                 style: AppText.textMedium(
-                  size: 19.44.w,
+                  fontSize: 19.44.w,
                   textColor: Colors.white,
                 ),
               ),
@@ -314,7 +314,7 @@ class Companies extends StatelessWidget {
               Text(
                 "Google",
                 style: AppText.textMedium(
-                  size: 22.w,
+                  fontSize: 22.w,
                   textColor: Colors.white,
                 ),
               ),
@@ -401,7 +401,7 @@ class Companies extends StatelessWidget {
               Text(
                 "Apple",
                 style: AppText.textMedium(
-                  size: 21.25.w,
+                  fontSize: 21.25.w,
                   textColor: AppColors.primaryColor,
                 ),
               ),

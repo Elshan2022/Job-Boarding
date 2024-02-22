@@ -2,16 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_job_boarding/components/app_colors.dart';
 import 'package:flutter_job_boarding/components/app_text.dart';
 import 'package:flutter_job_boarding/components/decoration.dart';
+import 'package:flutter_job_boarding/components/helper_methods.dart';
+import 'package:flutter_job_boarding/managerWidgets/experience_widget.dart';
 import 'package:flutter_job_boarding/managerWidgets/work_type_dropDown.dart';
+import 'package:flutter_job_boarding/providers/locator_provider.dart';
 import 'package:flutter_job_boarding/userWidgets/user_image.dart';
 import 'package:flutter_job_boarding/viewModel/manager_page_view_model.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ManagerPage extends StatefulWidget {
+class ManagerPage extends ConsumerStatefulWidget {
   const ManagerPage({super.key});
 
   @override
-  State<ManagerPage> createState() => _ManagerPageState();
+  ConsumerState<ManagerPage> createState() => _ManagerPageState();
 }
 
 class _ManagerPageState extends ManagerPageViewModel {
@@ -29,11 +33,49 @@ class _ManagerPageState extends ManagerPageViewModel {
               _textFormField(companyName, "Your company name"),
               _textFormField(email, "Your email"),
               _textFormField(field, "I'm hiring..."),
-              WorkTypeDropDown(),
+              _userCurrentCountry(ref, context),
+              Container(
+                width: double.infinity,
+                margin: EdgeInsets.only(top: 15.h),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(flex: 1, child: WorkTypeDropDown()),
+                    SizedBox(width: 15.w),
+                    Expanded(flex: 1, child: ExperienceWidget()),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  _userCurrentCountry(WidgetRef ref, BuildContext context) {
+    return ref.watch(locatorProvider(context)).when(
+      data: (data) {
+        country.text = data;
+        return _textFormField(country, "Country");
+      },
+      error: (error, stackTrace) {
+        return HelperMethods.showSnackBar(
+          context,
+          error.toString(),
+          AppColors.colorRed,
+        );
+      },
+      loading: () {
+        return const AlertDialog(
+          backgroundColor: AppColors.primaryLight,
+          content: Center(
+            child: CircularProgressIndicator(
+              color: Colors.white,
+            ),
+          ),
+        );
+      },
     );
   }
 }
@@ -46,7 +88,7 @@ _textFormField(TextEditingController controller, String hintText) {
       controller: controller,
       style: AppDecorations.textFieldTextStyle,
       decoration: InputDecoration(
-        hintStyle: AppText.textMedium(size: 16),
+        hintStyle: AppText.textMedium(fontSize: 16),
         hintText: hintText,
         border: AppDecorations.textFieldBorder,
         errorBorder: AppDecorations.textFieldErrorBorder,

@@ -21,13 +21,13 @@ class SearchTextField extends ConsumerWidget {
       width: double.infinity,
       margin: EdgeInsets.only(bottom: 24.w),
       child: TextFormField(
-        style: AppText.textMedium(size: 14, textColor: Colors.white),
+        style: AppText.textMedium(fontSize: 14, textColor: Colors.white),
         focusNode: _focusNode,
         decoration: InputDecoration(
           contentPadding: EdgeInsets.only(top: 10.h),
           prefixIcon: Icon(Icons.search, color: Colors.white, size: 20.w),
           hintText: _hintText,
-          hintStyle: AppText.textMedium(size: 14),
+          hintStyle: AppText.textMedium(fontSize: 14),
           fillColor: AppColors.primaryLight,
           filled: true,
           border: OutlineInputBorder(

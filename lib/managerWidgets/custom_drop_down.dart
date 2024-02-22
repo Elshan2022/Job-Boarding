@@ -19,12 +19,12 @@ class CustomDropDown extends StatelessWidget {
       dropdownColor: AppColors.primaryLight,
       borderRadius: BorderRadius.circular(15.w),
       style: AppText.textMedium(
-        size: 16,
+        fontSize: 16,
         textColor: Colors.white,
         decoration: TextDecoration.none,
       ),
       decoration: InputDecoration(
-        hintStyle: AppText.textMedium(size: 16),
+        hintStyle: AppText.textMedium(fontSize: 16),
         border: AppDecorations.textFieldBorder,
         errorBorder: AppDecorations.textFieldErrorBorder,
         focusedBorder: AppDecorations.textFieldBorder,

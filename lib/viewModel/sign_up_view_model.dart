@@ -38,7 +38,7 @@ abstract class SignUpViewModel extends ConsumerState<SignUpPage> {
         ),
         ref,
       );
-      AutoRouter.of(context).replaceNamed(_routesNames.homePage);
+      AutoRouter.of(context).replaceNamed(_routesNames.main);
     } catch (e) {
       HelperMethods.showSnackBar(context, e.toString(), AppColors.colorRed);
     }

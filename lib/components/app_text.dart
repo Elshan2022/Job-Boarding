@@ -18,12 +18,12 @@ class AppText {
 
   static textMedium(
       {Color textColor = Colors.white,
-      double size = 12,
+      double fontSize = 12,
       TextDecoration decoration = TextDecoration.none}) {
     return GoogleFonts.inter(
       fontWeight: FontWeight.w500,
       color: textColor,
-      fontSize: size.sp,
+      fontSize: fontSize.sp,
       textStyle: TextStyle(decoration: decoration),
     );
   }

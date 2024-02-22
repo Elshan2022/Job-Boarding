@@ -66,7 +66,7 @@ class JobDetailContainer extends StatelessWidget {
                   subtitle: Text(
                     _jobs[index].jobSubtitle,
                     style: AppText.textMedium(
-                      size: 12,
+                      fontSize: 12,
                       textColor: AppColors.primaryColor,
                     ),
                   ),
@@ -110,7 +110,7 @@ class JobDetailContainer extends StatelessWidget {
                 Text(
                   "Posted ${_jobs[index].postedDuration} days ago",
                   style: AppText.textMedium(
-                    size: 14,
+                    fontSize: 14,
                     textColor: AppColors.primaryColor,
                   ),
                 ),

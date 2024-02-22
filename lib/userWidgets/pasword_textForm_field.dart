@@ -31,7 +31,9 @@ class _PasswordTextFormFieldState extends PasswordTextFormFieldViewModel {
         cursorColor: Colors.white,
         obscureText: isVisible,
         style: AppText.textMedium(
-            size: 16, textColor: Colors.white, decoration: TextDecoration.none),
+            fontSize: 16,
+            textColor: Colors.white,
+            decoration: TextDecoration.none),
         decoration: InputDecoration(
           suffixIcon: IconButton(
             onPressed: () {
@@ -47,7 +49,7 @@ class _PasswordTextFormFieldState extends PasswordTextFormFieldViewModel {
             borderRadius: BorderRadius.circular(10.w),
             borderSide: const BorderSide(color: Colors.white),
           ),
-          hintStyle: AppText.textMedium(size: 16),
+          hintStyle: AppText.textMedium(fontSize: 16),
           errorText: errorText,
           hintText: "Password",
           errorBorder: OutlineInputBorder(

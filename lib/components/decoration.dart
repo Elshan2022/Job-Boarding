@@ -38,7 +38,7 @@ class AppDecorations {
 
   static TextStyle get textFieldTextStyle {
     return AppText.textMedium(
-      size: 16,
+      fontSize: 16,
       textColor: Colors.white,
       decoration: TextDecoration.none,
     );
