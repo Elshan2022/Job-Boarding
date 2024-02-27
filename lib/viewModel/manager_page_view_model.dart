@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_job_boarding/managerView/manager_page.dart';
+import 'package:flutter_job_boarding/repository/service_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 abstract class ManagerPageViewModel extends ConsumerState<ManagerPage> {
@@ -7,6 +8,9 @@ abstract class ManagerPageViewModel extends ConsumerState<ManagerPage> {
   late final TextEditingController email;
   late final TextEditingController field;
   late final TextEditingController country;
+  late final TextEditingController description;
+  late final TextEditingController employeeRole;
+  final ServiceRepository repository = ServiceRepository();
 
   @override
   void initState() {
@@ -15,6 +19,8 @@ abstract class ManagerPageViewModel extends ConsumerState<ManagerPage> {
     email = TextEditingController();
     field = TextEditingController();
     country = TextEditingController();
+    description = TextEditingController();
+    employeeRole = TextEditingController();
   }
 
   @override
@@ -24,5 +30,7 @@ abstract class ManagerPageViewModel extends ConsumerState<ManagerPage> {
     super.dispose();
     field.dispose();
     country.dispose();
+    description.dispose();
+    employeeRole.dispose();
   }
 }

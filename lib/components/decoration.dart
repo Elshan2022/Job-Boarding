@@ -43,4 +43,13 @@ class AppDecorations {
       decoration: TextDecoration.none,
     );
   }
+
+  static ButtonStyle get elevatedButtonStyle {
+    return ElevatedButton.styleFrom(
+      backgroundColor: AppColors.primaryBlue,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15.w),
+      ),
+    );
+  }
 }

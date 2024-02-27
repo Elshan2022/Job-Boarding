@@ -51,6 +51,7 @@ dependencies:
   another_flushbar: ^1.12.30
   geolocator: ^11.0.0
   geocoding: ^2.2.0
+  dio: ^5.4.1
   
   
   

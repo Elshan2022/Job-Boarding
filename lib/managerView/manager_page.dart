@@ -4,6 +4,7 @@ import 'package:flutter_job_boarding/components/app_text.dart';
 import 'package:flutter_job_boarding/components/decoration.dart';
 import 'package:flutter_job_boarding/components/helper_methods.dart';
 import 'package:flutter_job_boarding/managerWidgets/experience_widget.dart';
+import 'package:flutter_job_boarding/managerWidgets/skills_view.dart';
 import 'package:flutter_job_boarding/managerWidgets/work_type_dropDown.dart';
 import 'package:flutter_job_boarding/providers/locator_provider.dart';
 import 'package:flutter_job_boarding/userWidgets/user_image.dart';
@@ -34,6 +35,9 @@ class _ManagerPageState extends ManagerPageViewModel {
               _textFormField(email, "Your email"),
               _textFormField(field, "I'm hiring..."),
               _userCurrentCountry(ref, context),
+              SkillsView(),
+              _textFormField(description, "Job description", 5),
+              _textFormField(employeeRole, "Employee role", 5),
               Container(
                 width: double.infinity,
                 margin: EdgeInsets.only(top: 15.h),
@@ -44,6 +48,19 @@ class _ManagerPageState extends ManagerPageViewModel {
                     SizedBox(width: 15.w),
                     Expanded(flex: 1, child: ExperienceWidget()),
                   ],
+                ),
+              ),
+              SizedBox(height: 15.h),
+              SizedBox(
+                width: double.infinity,
+                height: 56.h,
+                child: ElevatedButton(
+                  onPressed: () async {},
+                  style: AppDecorations.elevatedButtonStyle,
+                  child: Text(
+                    "Publish job",
+                    style: AppText.textBold(fontSize: 16),
+                  ),
                 ),
               ),
             ],
@@ -80,12 +97,14 @@ class _ManagerPageState extends ManagerPageViewModel {
   }
 }
 
-_textFormField(TextEditingController controller, String hintText) {
+_textFormField(TextEditingController controller, String hintText,
+    [int maxLine = 1]) {
   return Container(
     margin: EdgeInsets.only(bottom: 15.h),
     child: TextFormField(
       cursorColor: Colors.white,
       controller: controller,
+      maxLines: maxLine,
       style: AppDecorations.textFieldTextStyle,
       decoration: InputDecoration(
         hintStyle: AppText.textMedium(fontSize: 16),
