@@ -69,7 +69,7 @@ class JobTitle extends ConsumerWidget {
             borderRadius: BorderRadius.circular(10.w),
             image: DecorationImage(
               fit: BoxFit.cover,
-              image: NetworkImage(jobs[index].jobLogo),
+              image: NetworkImage(jobs[index].logo),
             ),
           ),
         ),
@@ -79,7 +79,7 @@ class JobTitle extends ConsumerWidget {
 
   Text _subTitle() {
     return Text(
-      jobs[index].jobSubtitle,
+      jobs[index].company,
       style: AppText.textMedium(
         fontSize: 12,
       ),
@@ -88,7 +88,7 @@ class JobTitle extends ConsumerWidget {
 
   Text _title() {
     return Text(
-      jobs[index].jobTitle,
+      jobs[index].field,
       style: AppText.textBold(
         fontSize: 14,
       ),

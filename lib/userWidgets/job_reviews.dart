@@ -41,14 +41,14 @@ class JobReview extends ConsumerWidget {
                 children: [
                   CustomChip(
                       imagePath: Assets.icons.location.path,
-                      title: jobList[index].jobLocation),
+                      title: jobList[index].location),
                   CustomChip(
                     imagePath: Assets.icons.cap.path,
                     title: "${jobList[index].experience} years exp.",
                   ),
                   CustomChip(
                     imagePath: Assets.icons.clock.path,
-                    title: jobList[index].jobTime,
+                    title: jobList[index].type,
                   ),
                 ],
               ),

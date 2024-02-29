@@ -8,13 +8,13 @@ part of 'job_model.dart';
 
 _$JobModelImpl _$$JobModelImplFromJson(Map<String, dynamic> json) =>
     _$JobModelImpl(
-      jobLogo: json['jobLogo'] as String,
-      jobTitle: json['jobTitle'] as String,
-      jobSubtitle: json['jobSubtitle'] as String,
+      logo: json['logo'] as String,
+      field: json['field'] as String,
+      company: json['company'] as String,
       postedDuration: json['postedDuration'] as String,
-      jobLocation: json['jobLocation'] as String,
+      location: json['location'] as String,
       experience: json['experience'] as String,
-      jobTime: json['jobTime'] as String,
+      type: json['type'] as String,
       salary: json['salary'] as String,
       description: json['description'] as String,
       id: json['id'] as String,
@@ -27,13 +27,13 @@ _$JobModelImpl _$$JobModelImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$JobModelImplToJson(_$JobModelImpl instance) =>
     <String, dynamic>{
-      'jobLogo': instance.jobLogo,
-      'jobTitle': instance.jobTitle,
-      'jobSubtitle': instance.jobSubtitle,
+      'logo': instance.logo,
+      'field': instance.field,
+      'company': instance.company,
       'postedDuration': instance.postedDuration,
-      'jobLocation': instance.jobLocation,
+      'location': instance.location,
       'experience': instance.experience,
-      'jobTime': instance.jobTime,
+      'type': instance.type,
       'salary': instance.salary,
       'description': instance.description,
       'id': instance.id,

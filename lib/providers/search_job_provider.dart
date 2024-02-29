@@ -13,7 +13,7 @@ class JobSearchNotifier extends StateNotifier<List<JobModel>> {
   searchJob(String query) {
     final allJobs = ref.watch(jobsProvider);
     final searchList = allJobs.where((element) {
-      final job = element.jobTitle.toLowerCase();
+      final job = element.field.toLowerCase();
       final queryJob = query.toLowerCase();
 
       return job.contains(queryJob);

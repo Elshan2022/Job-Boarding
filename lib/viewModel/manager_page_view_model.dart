@@ -10,6 +10,7 @@ abstract class ManagerPageViewModel extends ConsumerState<ManagerPage> {
   late final TextEditingController country;
   late final TextEditingController description;
   late final TextEditingController employeeRole;
+  late final TextEditingController salary;
   final ServiceRepository repository = ServiceRepository();
 
   @override
@@ -21,6 +22,7 @@ abstract class ManagerPageViewModel extends ConsumerState<ManagerPage> {
     country = TextEditingController();
     description = TextEditingController();
     employeeRole = TextEditingController();
+    salary = TextEditingController();
   }
 
   @override
@@ -32,5 +34,6 @@ abstract class ManagerPageViewModel extends ConsumerState<ManagerPage> {
     country.dispose();
     description.dispose();
     employeeRole.dispose();
+    salary.dispose();
   }
 }

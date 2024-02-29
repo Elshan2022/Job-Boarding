@@ -50,21 +50,21 @@ class JobDetailContainer extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10.w),
                           image: DecorationImage(
                             fit: BoxFit.cover,
-                            image: NetworkImage(_jobs[index].jobLogo),
+                            image: NetworkImage(_jobs[index].logo),
                           ),
                         ),
                       ),
                     ),
                   ),
                   title: Text(
-                    _jobs[index].jobTitle,
+                    _jobs[index].field,
                     style: AppText.textBold(
                       fontSize: 14,
                       textColor: AppColors.primaryColor,
                     ),
                   ),
                   subtitle: Text(
-                    _jobs[index].jobSubtitle,
+                    _jobs[index].company,
                     style: AppText.textMedium(
                       fontSize: 12,
                       textColor: AppColors.primaryColor,
@@ -82,7 +82,7 @@ class JobDetailContainer extends StatelessWidget {
                       CustomChip(
                           chipColor: AppColors.primaryColor,
                           imagePath: Assets.icons.location.path,
-                          title: _jobs[index].jobLocation),
+                          title: _jobs[index].location),
                       SizedBox(width: 15.w),
                       CustomChip(
                         chipColor: AppColors.primaryColor,
@@ -93,7 +93,7 @@ class JobDetailContainer extends StatelessWidget {
                       CustomChip(
                         chipColor: AppColors.primaryColor,
                         imagePath: Assets.icons.clock.path,
-                        title: _jobs[index].jobTime,
+                        title: _jobs[index].type,
                       ),
                     ],
                   ),

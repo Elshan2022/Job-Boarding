@@ -11,7 +11,7 @@ final hasPermissionProvider = StateProvider<bool>((ref) {
 });
 
 final locatorProvider =
-    FutureProvider.family<String, BuildContext>((ref, context) async {
+    FutureProvider.family<String?, BuildContext>((ref, context) async {
   // check permission
   bool serviceEnabled = ref.watch(hasPermissionProvider.notifier).state;
   LocationPermission? permission;
@@ -58,6 +58,7 @@ final locatorProvider =
         await placemarkFromCoordinates(position.latitude, position.longitude);
 
     Placemark place = placemarks[0];
+   
 
     return place.country.toString();
   }

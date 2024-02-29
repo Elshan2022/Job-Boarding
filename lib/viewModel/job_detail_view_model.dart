@@ -62,13 +62,13 @@ abstract class JobDetailViewModel extends State<JobDetailPage> {
                 try {
                   await serviceRepository.saveJob(
                     JobModel(
-                      jobLogo: job.jobLogo,
-                      jobTitle: job.jobTitle,
-                      jobSubtitle: job.jobSubtitle,
+                      logo: job.logo,
+                      field: job.field,
+                      company: job.company,
                       postedDuration: job.postedDuration,
-                      jobLocation: job.jobLocation,
+                      location: job.location,
                       experience: job.experience,
-                      jobTime: job.jobTime,
+                      type: job.type,
                       salary: job.salary,
                       description: job.description,
                       id: job.id,

@@ -7,27 +7,28 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter_job_boarding/providers/user_image_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-abstract class IAuthenticateService {
+abstract class IFirebaseService {
   Future<void> signIn(String? email, String? password);
   Future<void> signUp(SignUpModel model, WidgetRef ref);
   Future<void> signOut();
   Future<Map<String, dynamic>?> getUserData();
   Future<void> saveJob(JobModel model);
+  Future<void> writeJob(JobModel model, WidgetRef ref);
   Stream<List<JobModel>>? getSavedJobs();
 
   final FirebaseAuth auth;
   final FirebaseFirestore firestore;
   final FirebaseStorage storage;
 
-  IAuthenticateService({
+  IFirebaseService({
     required this.auth,
     required this.firestore,
     required this.storage,
   });
 }
 
-class AuthenticateService extends IAuthenticateService {
-  AuthenticateService({
+class FirebaseService extends IFirebaseService {
+  FirebaseService({
     required super.auth,
     required super.firestore,
     required super.storage,
@@ -131,4 +132,45 @@ class AuthenticateService extends IAuthenticateService {
 
     return savedJobs;
   }
+
+  @override
+  Future<void> writeJob(JobModel model, WidgetRef ref) async {
+    String? imageUrl;
+    final userImage = ref.watch(userImageProvider);
+    if (userImage != null) {
+      final reference = storage.ref().child("${model.company}.jpg");
+      await reference.putFile(userImage);
+      imageUrl = await reference.getDownloadURL();
+    }
+
+    await firestore.collection("jobs").doc().set(
+      {
+        "logo": imageUrl,
+        "company": model.company,
+        "field": model.field,
+        "postedDuration": model.postedDuration,
+        "location": model.location,
+        "experience": model.experience,
+        "type": model.type,
+        "salary": model.salary,
+        "description": model.description,
+        "id": model.id,
+        "skills": model.skills,
+        "role": model.role,
+      },
+    );
+  }
 }
+
+/* required String logo,
+    required String field,
+    required String company,
+    required String postedDuration,
+    required String location,
+    required String experience,
+    required String type,
+    required String salary,
+    required String description,
+    required String id,
+    required List<String> skills,
+    required String role, */

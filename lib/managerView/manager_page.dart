@@ -4,7 +4,8 @@ import 'package:flutter_job_boarding/components/app_text.dart';
 import 'package:flutter_job_boarding/components/decoration.dart';
 import 'package:flutter_job_boarding/components/helper_methods.dart';
 import 'package:flutter_job_boarding/managerWidgets/experience_widget.dart';
-import 'package:flutter_job_boarding/managerWidgets/skills_view.dart';
+import 'package:flutter_job_boarding/managerWidgets/skills_auto_complete.dart';
+import 'package:flutter_job_boarding/managerWidgets/skills_list_view.dart';
 import 'package:flutter_job_boarding/managerWidgets/work_type_dropDown.dart';
 import 'package:flutter_job_boarding/providers/locator_provider.dart';
 import 'package:flutter_job_boarding/userWidgets/user_image.dart';
@@ -20,12 +21,14 @@ class ManagerPage extends ConsumerStatefulWidget {
 }
 
 class _ManagerPageState extends ManagerPageViewModel {
+  var edgeInsets = EdgeInsets.only(left: 16.w, right: 16.w, top: 40.h);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.primaryColor,
       body: Padding(
-        padding: EdgeInsets.only(left: 16.w, right: 16.w, top: 40.h),
+        padding: edgeInsets,
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -34,8 +37,10 @@ class _ManagerPageState extends ManagerPageViewModel {
               _textFormField(companyName, "Your company name"),
               _textFormField(email, "Your email"),
               _textFormField(field, "I'm hiring..."),
+              _textFormField(salary, "Salary (for per hour)"),
               _userCurrentCountry(ref, context),
-              SkillsView(),
+              const SkillsAutoCompleteView(),
+              SkillsListView(),
               _textFormField(description, "Job description", 5),
               _textFormField(employeeRole, "Employee role", 5),
               Container(
@@ -55,7 +60,7 @@ class _ManagerPageState extends ManagerPageViewModel {
                 width: double.infinity,
                 height: 56.h,
                 child: ElevatedButton(
-                  onPressed: () async {},
+                  onPressed: () {},
                   style: AppDecorations.elevatedButtonStyle,
                   child: Text(
                     "Publish job",
@@ -73,8 +78,10 @@ class _ManagerPageState extends ManagerPageViewModel {
   _userCurrentCountry(WidgetRef ref, BuildContext context) {
     return ref.watch(locatorProvider(context)).when(
       data: (data) {
-        country.text = data;
-        return _textFormField(country, "Country");
+        if (data != null) {
+          country.text = data;
+          return _textFormField(country, "Country");
+        }
       },
       error: (error, stackTrace) {
         return HelperMethods.showSnackBar(

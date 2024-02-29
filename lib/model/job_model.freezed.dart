@@ -20,13 +20,13 @@ JobModel _$JobModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$JobModel {
-  String get jobLogo => throw _privateConstructorUsedError;
-  String get jobTitle => throw _privateConstructorUsedError;
-  String get jobSubtitle => throw _privateConstructorUsedError;
+  String get logo => throw _privateConstructorUsedError;
+  String get field => throw _privateConstructorUsedError;
+  String get company => throw _privateConstructorUsedError;
   String get postedDuration => throw _privateConstructorUsedError;
-  String get jobLocation => throw _privateConstructorUsedError;
+  String get location => throw _privateConstructorUsedError;
   String get experience => throw _privateConstructorUsedError;
-  String get jobTime => throw _privateConstructorUsedError;
+  String get type => throw _privateConstructorUsedError;
   String get salary => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
@@ -47,13 +47,13 @@ abstract class $JobModelCopyWith<$Res> {
       _$JobModelCopyWithImpl<$Res, JobModel>;
   @useResult
   $Res call(
-      {String jobLogo,
-      String jobTitle,
-      String jobSubtitle,
+      {String logo,
+      String field,
+      String company,
       String postedDuration,
-      String jobLocation,
+      String location,
       String experience,
-      String jobTime,
+      String type,
       String salary,
       String description,
       String id,
@@ -76,13 +76,13 @@ class _$JobModelCopyWithImpl<$Res, $Val extends JobModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? jobLogo = null,
-    Object? jobTitle = null,
-    Object? jobSubtitle = null,
+    Object? logo = null,
+    Object? field = null,
+    Object? company = null,
     Object? postedDuration = null,
-    Object? jobLocation = null,
+    Object? location = null,
     Object? experience = null,
-    Object? jobTime = null,
+    Object? type = null,
     Object? salary = null,
     Object? description = null,
     Object? id = null,
@@ -92,33 +92,33 @@ class _$JobModelCopyWithImpl<$Res, $Val extends JobModel>
     Object? isDiscard = null,
   }) {
     return _then(_value.copyWith(
-      jobLogo: null == jobLogo
-          ? _value.jobLogo
-          : jobLogo // ignore: cast_nullable_to_non_nullable
+      logo: null == logo
+          ? _value.logo
+          : logo // ignore: cast_nullable_to_non_nullable
               as String,
-      jobTitle: null == jobTitle
-          ? _value.jobTitle
-          : jobTitle // ignore: cast_nullable_to_non_nullable
+      field: null == field
+          ? _value.field
+          : field // ignore: cast_nullable_to_non_nullable
               as String,
-      jobSubtitle: null == jobSubtitle
-          ? _value.jobSubtitle
-          : jobSubtitle // ignore: cast_nullable_to_non_nullable
+      company: null == company
+          ? _value.company
+          : company // ignore: cast_nullable_to_non_nullable
               as String,
       postedDuration: null == postedDuration
           ? _value.postedDuration
           : postedDuration // ignore: cast_nullable_to_non_nullable
               as String,
-      jobLocation: null == jobLocation
-          ? _value.jobLocation
-          : jobLocation // ignore: cast_nullable_to_non_nullable
+      location: null == location
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
               as String,
       experience: null == experience
           ? _value.experience
           : experience // ignore: cast_nullable_to_non_nullable
               as String,
-      jobTime: null == jobTime
-          ? _value.jobTime
-          : jobTime // ignore: cast_nullable_to_non_nullable
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
               as String,
       salary: null == salary
           ? _value.salary
@@ -161,13 +161,13 @@ abstract class _$$JobModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String jobLogo,
-      String jobTitle,
-      String jobSubtitle,
+      {String logo,
+      String field,
+      String company,
       String postedDuration,
-      String jobLocation,
+      String location,
       String experience,
-      String jobTime,
+      String type,
       String salary,
       String description,
       String id,
@@ -188,13 +188,13 @@ class __$$JobModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? jobLogo = null,
-    Object? jobTitle = null,
-    Object? jobSubtitle = null,
+    Object? logo = null,
+    Object? field = null,
+    Object? company = null,
     Object? postedDuration = null,
-    Object? jobLocation = null,
+    Object? location = null,
     Object? experience = null,
-    Object? jobTime = null,
+    Object? type = null,
     Object? salary = null,
     Object? description = null,
     Object? id = null,
@@ -204,33 +204,33 @@ class __$$JobModelImplCopyWithImpl<$Res>
     Object? isDiscard = null,
   }) {
     return _then(_$JobModelImpl(
-      jobLogo: null == jobLogo
-          ? _value.jobLogo
-          : jobLogo // ignore: cast_nullable_to_non_nullable
+      logo: null == logo
+          ? _value.logo
+          : logo // ignore: cast_nullable_to_non_nullable
               as String,
-      jobTitle: null == jobTitle
-          ? _value.jobTitle
-          : jobTitle // ignore: cast_nullable_to_non_nullable
+      field: null == field
+          ? _value.field
+          : field // ignore: cast_nullable_to_non_nullable
               as String,
-      jobSubtitle: null == jobSubtitle
-          ? _value.jobSubtitle
-          : jobSubtitle // ignore: cast_nullable_to_non_nullable
+      company: null == company
+          ? _value.company
+          : company // ignore: cast_nullable_to_non_nullable
               as String,
       postedDuration: null == postedDuration
           ? _value.postedDuration
           : postedDuration // ignore: cast_nullable_to_non_nullable
               as String,
-      jobLocation: null == jobLocation
-          ? _value.jobLocation
-          : jobLocation // ignore: cast_nullable_to_non_nullable
+      location: null == location
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
               as String,
       experience: null == experience
           ? _value.experience
           : experience // ignore: cast_nullable_to_non_nullable
               as String,
-      jobTime: null == jobTime
-          ? _value.jobTime
-          : jobTime // ignore: cast_nullable_to_non_nullable
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
               as String,
       salary: null == salary
           ? _value.salary
@@ -268,13 +268,13 @@ class __$$JobModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$JobModelImpl implements _JobModel {
   const _$JobModelImpl(
-      {required this.jobLogo,
-      required this.jobTitle,
-      required this.jobSubtitle,
+      {required this.logo,
+      required this.field,
+      required this.company,
       required this.postedDuration,
-      required this.jobLocation,
+      required this.location,
       required this.experience,
-      required this.jobTime,
+      required this.type,
       required this.salary,
       required this.description,
       required this.id,
@@ -288,19 +288,19 @@ class _$JobModelImpl implements _JobModel {
       _$$JobModelImplFromJson(json);
 
   @override
-  final String jobLogo;
+  final String logo;
   @override
-  final String jobTitle;
+  final String field;
   @override
-  final String jobSubtitle;
+  final String company;
   @override
   final String postedDuration;
   @override
-  final String jobLocation;
+  final String location;
   @override
   final String experience;
   @override
-  final String jobTime;
+  final String type;
   @override
   final String salary;
   @override
@@ -326,7 +326,7 @@ class _$JobModelImpl implements _JobModel {
 
   @override
   String toString() {
-    return 'JobModel(jobLogo: $jobLogo, jobTitle: $jobTitle, jobSubtitle: $jobSubtitle, postedDuration: $postedDuration, jobLocation: $jobLocation, experience: $experience, jobTime: $jobTime, salary: $salary, description: $description, id: $id, skills: $skills, role: $role, isApplied: $isApplied, isDiscard: $isDiscard)';
+    return 'JobModel(logo: $logo, field: $field, company: $company, postedDuration: $postedDuration, location: $location, experience: $experience, type: $type, salary: $salary, description: $description, id: $id, skills: $skills, role: $role, isApplied: $isApplied, isDiscard: $isDiscard)';
   }
 
   @override
@@ -334,18 +334,16 @@ class _$JobModelImpl implements _JobModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$JobModelImpl &&
-            (identical(other.jobLogo, jobLogo) || other.jobLogo == jobLogo) &&
-            (identical(other.jobTitle, jobTitle) ||
-                other.jobTitle == jobTitle) &&
-            (identical(other.jobSubtitle, jobSubtitle) ||
-                other.jobSubtitle == jobSubtitle) &&
+            (identical(other.logo, logo) || other.logo == logo) &&
+            (identical(other.field, field) || other.field == field) &&
+            (identical(other.company, company) || other.company == company) &&
             (identical(other.postedDuration, postedDuration) ||
                 other.postedDuration == postedDuration) &&
-            (identical(other.jobLocation, jobLocation) ||
-                other.jobLocation == jobLocation) &&
+            (identical(other.location, location) ||
+                other.location == location) &&
             (identical(other.experience, experience) ||
                 other.experience == experience) &&
-            (identical(other.jobTime, jobTime) || other.jobTime == jobTime) &&
+            (identical(other.type, type) || other.type == type) &&
             (identical(other.salary, salary) || other.salary == salary) &&
             (identical(other.description, description) ||
                 other.description == description) &&
@@ -362,13 +360,13 @@ class _$JobModelImpl implements _JobModel {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      jobLogo,
-      jobTitle,
-      jobSubtitle,
+      logo,
+      field,
+      company,
       postedDuration,
-      jobLocation,
+      location,
       experience,
-      jobTime,
+      type,
       salary,
       description,
       id,
@@ -393,13 +391,13 @@ class _$JobModelImpl implements _JobModel {
 
 abstract class _JobModel implements JobModel {
   const factory _JobModel(
-      {required final String jobLogo,
-      required final String jobTitle,
-      required final String jobSubtitle,
+      {required final String logo,
+      required final String field,
+      required final String company,
       required final String postedDuration,
-      required final String jobLocation,
+      required final String location,
       required final String experience,
-      required final String jobTime,
+      required final String type,
       required final String salary,
       required final String description,
       required final String id,
@@ -412,19 +410,19 @@ abstract class _JobModel implements JobModel {
       _$JobModelImpl.fromJson;
 
   @override
-  String get jobLogo;
+  String get logo;
   @override
-  String get jobTitle;
+  String get field;
   @override
-  String get jobSubtitle;
+  String get company;
   @override
   String get postedDuration;
   @override
-  String get jobLocation;
+  String get location;
   @override
   String get experience;
   @override
-  String get jobTime;
+  String get type;
   @override
   String get salary;
   @override

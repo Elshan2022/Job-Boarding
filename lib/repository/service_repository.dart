@@ -4,12 +4,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter_job_boarding/model/job_model.dart';
 import 'package:flutter_job_boarding/model/sign_up_model.dart';
-import 'package:flutter_job_boarding/service/authenticate_service.dart';
+import 'package:flutter_job_boarding/service/firebase_service.dart';
 import 'package:flutter_job_boarding/service/skills_service.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class ServiceRepository {
-  IAuthenticateService service = AuthenticateService(
+  IFirebaseService service = FirebaseService(
     auth: FirebaseAuth.instance,
     firestore: FirebaseFirestore.instance,
     storage: FirebaseStorage.instance,
@@ -22,6 +22,10 @@ class ServiceRepository {
       ),
     ),
   );
+
+  Future<void> writeJob(JobModel model, WidgetRef ref) async {
+    await service.writeJob(model, ref);
+  }
 
   Future<List<String>?> getSkills(String query) {
     return skillService.getSkills(query);
